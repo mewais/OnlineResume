@@ -17,8 +17,10 @@ import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
 
+from Background import create_background_layout
+
 # These layouts do not need to be updated everytime, they're static
-# BACKGROUND = create_background_layout()
+BACKGROUND = create_background_layout()
 # RESEARCH = create_research_layout()
 # PUBLICATIONS = create_publications_layout()
 # TEACHING = create_teaching_layout()
@@ -26,7 +28,7 @@ import dash_html_components as dhtml
 # CONTACT = create_contact_layout()
 
 
-def init_layout():
+def create_layout():
     '''
     Initialize the general parent layout of ETop
 
@@ -37,7 +39,9 @@ def init_layout():
     '''
 
     # Title
-    title = dhtml.H1(children='Mohammad Ewais')
+    with open('assets/content/name.txt', 'r') as file:
+        name = file.read().replace('\n', '')
+    title = dhtml.H1(children=name)
 
     # Image
     image = dhtml.Img(src='assets/images/face.jpg', className='circular-image')
@@ -70,6 +74,11 @@ def init_layout():
 
     return layout
 
+# App
+APP = dash.Dash(__name__)
+APP.config['suppress_callback_exceptions'] = True
+APP.layout = create_layout()
+
 @APP.callback(dash.dependencies.Output('body-div', 'children'),
               [dash.dependencies.Input('tabs', 'value')])
 def tab_picker(value):
@@ -83,8 +92,8 @@ def tab_picker(value):
         layout: the selected layout
     '''
     layout = None
-    # if value == '1':
-    #     layout = BACKGROUND
+    if value == '1':
+        layout = BACKGROUND
     # elif value == '2':
     #     layout = RESEARCH
     # elif value == '3':
@@ -96,11 +105,6 @@ def tab_picker(value):
     # elif value == '6':
     #     layout = CONTACT
     return layout
-
-# App
-APP = dash.Dash(__name__)
-APP.config['suppress_callback_exceptions'] = True
-APP.layout = init_layout()
 
 if __name__ == '__main__':
     APP.run_server(debug=True)
