@@ -78,8 +78,11 @@ def draw_history_figure():
         edu_dur = [month_difference(edu['start'], edu['end'])]
         edu_offset = [-1]
         hovertext = ['<b>' + edu['name'] + '</b><br>' + edu['location'] + '<br><i>' + 
-                     edu['start'].strftime('%b %Y') + ' to ' + 
-                     edu['end'].strftime('%b %Y')+ '</i>']
+                     edu['start'].strftime('%b %Y') + ' to ']
+        if edu['end'].date() == datetime.datetime.today().date():
+            hovertext[0] = hovertext[0] + 'current'
+        else:
+            hovertext[0] = hovertext[0] + edu['end'].strftime('%b %Y') + '</i>'
         data.append(go.Bar(name=edu['name'], x=edu_dur, y=edu_offset, base=edu_start, 
                            orientation='h', hovertext=hovertext, hoverinfo='text',
                            showlegend=False))
@@ -90,8 +93,11 @@ def draw_history_figure():
         exp_dur = [month_difference(exp['start'], exp['end'])]
         exp_offset = [1]
         hovertext = ['<b>' + exp['name'] + '</b><br>' + exp['location'] + '<br><i>' + 
-                     exp['start'].strftime('%b %Y') + ' to ' + 
-                     exp['end'].strftime('%b %Y')+ '</i>']
+                     exp['start'].strftime('%b %Y') + ' to ']
+        if exp['end'].date() == datetime.datetime.today().date():
+            hovertext[0] = hovertext[0] + 'current'
+        else:
+            hovertext[0] = hovertext[0] + exp['end'].strftime('%b %Y') + '</i>'
         data.append(go.Bar(name=exp['name'], x=exp_dur, y=exp_offset, base=exp_start,
                            orientation='h', hovertext=hovertext, hoverinfo='text',
                            showlegend=False))
@@ -113,7 +119,20 @@ def draw_history_figure():
 
     # Layout
     layout = dict(
+        title=dict(
+            text='<b>Experience and Education</b>',
+            y=0.9,
+            x=0.5,
+            xanchor='center',
+            yanchor='top',
+            font=dict(
+                family='Heebo',
+                size=24,
+                color='black'
+            )
+        ),
         barmode='stack',
+        # FIXME: Still need to correctly show months on the X axis
         xaxis=dict(
             tickmode='auto',
             ticktext=x_labels,

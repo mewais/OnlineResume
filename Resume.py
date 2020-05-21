@@ -67,12 +67,15 @@ def create_layout():
     linkedin_href = dhtml.A(children=[linkedin_icon], href=linkedin_link)
     stackof_href = dhtml.A(children=[stackof_icon], href=stackof_link)
     email_href = dhtml.A(children=[email_icon], href='mailto:'+email_link)
+    # FIXME: Footer is supposed to center all the icons inside it
     footer = dhtml.Div(children=[github_href, scholar_href, linkedin_href, stackof_href, email_href], className='tab-footer')
+    # Footer container makes is stick to the bottom
+    footer_container = dhtml.Div(children=[footer], className='tab-footer-container')
 
     # Tab Division
     tabs_collection = dcore.Tabs(id='tabs', children=[background_tab, research_tab, publications_tab, teaching_tab, skills_tab, contact_tab], value='1', vertical=True, parent_className='tabs', className='tabs-container')
  
-    tab_div = dhtml.Div(id='tabs-div', children=[image, title, tabs_collection, footer], className='tab-div')
+    tab_div = dhtml.Div(id='tabs-div', children=[image, title, tabs_collection, footer_container], className='tab-div')
 
     # Body Division
     body_div = dhtml.Div(id='body-div', className='body-div')
