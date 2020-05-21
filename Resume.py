@@ -17,6 +17,7 @@ import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
 
+from assets.content.links import *
 from Background import create_background_layout
 
 # These layouts do not need to be updated everytime, they're static
@@ -39,7 +40,7 @@ def create_layout():
     '''
 
     # Title
-    with open('assets/content/name.txt', 'r') as file:
+    with open('assets/content/name.md', 'r') as file:
         name = file.read().replace('\n', '')
     title = dhtml.H1(children=name)
 
@@ -59,7 +60,14 @@ def create_layout():
     scholar_icon = dhtml.Img(src='assets/icons/gs.png', className='icon')
     linkedin_icon = dhtml.Img(src='assets/icons/li.png', className='icon')
     stackof_icon = dhtml.Img(src='assets/icons/so.png', className='icon')
-    footer = dhtml.Div(children=[github_icon, scholar_icon, linkedin_icon, stackof_icon], className='tab-footer')
+    email_icon = dhtml.Img(src='assets/icons/em.png', className='icon')
+
+    github_href = dhtml.A(children=[github_icon], href=github_link)
+    scholar_href = dhtml.A(children=[scholar_icon], href=scholar_link)
+    linkedin_href = dhtml.A(children=[linkedin_icon], href=linkedin_link)
+    stackof_href = dhtml.A(children=[stackof_icon], href=stackof_link)
+    email_href = dhtml.A(children=[email_icon], href='mailto:'+email_link)
+    footer = dhtml.Div(children=[github_href, scholar_href, linkedin_href, stackof_href, email_href], className='tab-footer')
 
     # Tab Division
     tabs_collection = dcore.Tabs(id='tabs', children=[background_tab, research_tab, publications_tab, teaching_tab, skills_tab, contact_tab], value='1', vertical=True, parent_className='tabs', className='tabs-container')
