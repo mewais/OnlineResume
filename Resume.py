@@ -48,12 +48,13 @@ def create_layout():
     image = dhtml.Img(src='assets/images/face.jpg', className='circular-image')
 
     # Tabs
-    background_tab = dcore.Tab(label='\\f015 Background', value='1', className='unselected-tab', selected_className='selected-tab')
-    research_tab = dcore.Tab(label='\\f5d2 Research and Projects', value='2', className='unselected-tab', selected_className='selected-tab')
-    publications_tab = dcore.Tab(label='\\f46d Publications', value='3', className='unselected-tab', selected_className='selected-tab')
-    teaching_tab = dcore.Tab(label='\\f51c Teaching', value='4', className='unselected-tab', selected_className='selected-tab')
-    skills_tab = dcore.Tab(label='\\f7d9 Skills and Interests', value='5', className='unselected-tab', selected_className='selected-tab')
-    contact_tab = dcore.Tab(label='\\f2bb Contact Me', value='6', className='unselected-tab', selected_className='selected-tab')
+    # FIXME: How to make those spaces show in the website?
+    background_tab = dcore.Tab(label='\uf015    Background', value='1', className='unselected-tab', selected_className='selected-tab')
+    research_tab = dcore.Tab(label='\uf5d2    Research and Projects', value='2', className='unselected-tab', selected_className='selected-tab')
+    publications_tab = dcore.Tab(label='\uf70e    Publications', value='3', className='unselected-tab', selected_className='selected-tab')
+    teaching_tab = dcore.Tab(label='\uf51c    Teaching', value='4', className='unselected-tab', selected_className='selected-tab')
+    skills_tab = dcore.Tab(label='\uf7d9    Skills and Interests', value='5', className='unselected-tab', selected_className='selected-tab')
+    contact_tab = dcore.Tab(label='\uf2bb    Contact Me', value='6', className='unselected-tab', selected_className='selected-tab')
 
     # Tabs footer
     github_icon = dhtml.Img(src='assets/icons/gh.png', className='icon')
@@ -67,7 +68,6 @@ def create_layout():
     linkedin_href = dhtml.A(children=[linkedin_icon], href=linkedin_link)
     stackof_href = dhtml.A(children=[stackof_icon], href=stackof_link)
     email_href = dhtml.A(children=[email_icon], href='mailto:'+email_link)
-    # FIXME: Footer is supposed to center all the icons inside it
     footer = dhtml.Div(children=[github_href, scholar_href, linkedin_href, stackof_href, email_href], className='tab-footer')
     # Footer container makes is stick to the bottom
     footer_container = dhtml.Div(children=[footer], className='tab-footer-container')
