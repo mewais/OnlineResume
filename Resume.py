@@ -19,6 +19,7 @@ import dash_html_components as dhtml
 
 from assets.content.links import *
 from Background import create_background_layout
+from Contact import create_contact_layout
 
 # These layouts do not need to be updated everytime, they're static
 BACKGROUND = create_background_layout()
@@ -26,7 +27,7 @@ BACKGROUND = create_background_layout()
 # PUBLICATIONS = create_publications_layout()
 # TEACHING = create_teaching_layout()
 # SKILLS = create_skills_layout()
-# CONTACT = create_contact_layout()
+CONTACT = create_contact_layout()
 
 
 def create_layout():
@@ -113,8 +114,8 @@ def tab_picker(value):
     #     layout = TEACHING
     # elif value == '5':
     #     layout = SKILLS
-    # elif value == '6':
-    #     layout = CONTACT
+    elif value == '6':
+        layout = CONTACT
     return layout
 
 if __name__ == '__main__':

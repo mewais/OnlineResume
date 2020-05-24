@@ -29,11 +29,15 @@ body {
 	width: 100vw;
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Heebo', sans-serif;
+	font-family: 'Font Awesome 5 Free', 'Heebo', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
 	text-align: center;
+}
+
+h3, h4, h5, h6 {
+	text-align: left;
 }
 
 /* Parent Layout tab stuff */
@@ -95,7 +99,6 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 0px !important;
     border-top: 0px !important;
     border-bottom: 0px !important;
-    font-family: 'Font Awesome 5 Free';
     font-size: 20px;
     font-weight: 600;
 	text-align: left !important;
@@ -111,7 +114,6 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 0px !important;
     border-top: 0px !important;
     border-bottom: 0px !important;
-    font-family: 'Font Awesome 5 Free';
     font-size: 20px;
     font-weight: 600;
 	text-align: left !important;
@@ -154,7 +156,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .one-half-column {
 	background-color: transparent;
-	color: white;
 	width: 48%;
     margin-right: 1%;
     margin-left: 1%;
@@ -162,7 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .whole-column {
     background-color: transparent;
-    color: white;
     width: 98%;
     margin-right: 1%;
     margin-left: 1%;
@@ -171,6 +171,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Rows Layout */
 .one-half-row {
     height: 48%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.one-third-row {
+	background-color: transparent;
+	height: 32%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.two-thirds-row {
+	background-color: transparent;
+	height: 64%;
     margin-top: 1%;
     margin-bottom: 1%;
 }
