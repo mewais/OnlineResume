@@ -90,6 +90,8 @@ def create_layout():
 APP = dash.Dash(__name__)
 APP.config['suppress_callback_exceptions'] = True
 APP.layout = create_layout()
+with open('assets/content/name.md', 'r') as file:
+    APP.title = file.read().replace('\n', '')
 
 @APP.callback(dash.dependencies.Output('body-div', 'children'),
               [dash.dependencies.Input('tabs', 'value')])
