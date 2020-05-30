@@ -17,8 +17,114 @@ import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
 import plotly.graph_objs as go
+import icalendar
+import recurring_ical_events
+import urllib.request
+from datetime import datetime, timedelta
 
 from assets.content.location import *
+from assets.content.calendar import *
+
+def draw_calendar():
+    '''
+    Create the calendar with week info
+
+    Args:
+
+    Returns:
+        figure: The plotly figure, with week calendar drawn
+    '''
+    # Pick start and end dates to be the start of this week, and
+    # the end of next week
+    today = datetime.now().date()
+    start_date = today - timedelta(days=today.weekday())
+    end_date = start_date + timedelta(days=14)
+    if saturday_first:
+        start_date = start_date - timedelta(days=2)
+        end_date = end_date - timedelta(days=2)
+    start = (start_date.year, start_date.month, start_date.day)
+    end =   (end_date.year, end_date.month, end_date.day)
+    # Download the events
+    ical_string = urllib.request.urlopen(calendar_link).read()
+    calendar = icalendar.Calendar.from_ical(ical_string)
+    events = recurring_ical_events.of(calendar).between(start, end)
+    # Make weekdays
+    weekdays = []
+    day_date = start_date
+    while True:
+        weekday = day_date.strftime("%a %b %d")
+        weekdays.append(weekday)
+        day_date = day_date + timedelta(days=1)
+        if day_date == end_date:
+            break
+    # Make hours, with a 30 min granularity
+    # I start at 8AM, end at 8PM
+    begin = datetime(2000, 1, 1, 8, 0, 0)
+    end = begin + timedelta(minutes=30)
+    hours = []
+    while True:
+        time_slot_string = begin.strftime('%I:%M%p') + '-' + end.strftime('%I:%M%p')
+        hours.append(time_slot_string)
+        if end.hour == 20:
+            break
+        begin = end
+        end = end + timedelta(minutes=30)
+    # Colors
+    values = {}
+    max_value = 0
+    # Convert events to heatmap
+    # Heatmap is crazy, Z has to be filled by Y axis then X
+    # Meaning hours then days
+    heatmap = [[0]*len(weekdays) for i in range(len(hours))]
+    for event in events:
+        start_time = event["DTSTART"].dt
+        end_time = event["DTEND"].dt
+        name = event["SUMMARY"]
+        if name not in values:
+            max_value += 100
+            values[name] = max_value
+        color = values[name]
+        while True:
+            hour_index = (start_time.hour - 8) * 2 + (start_time.minute // 30)
+            day_index = (start_time.date() - start_date).days
+            heatmap[hour_index][day_index] = color
+            start_time = start_time + timedelta(minutes=30)
+            if start_time >= end_time:
+                break
+    # Plot
+    data = [go.Heatmap(
+        x=weekdays,
+        y=hours,
+        z=heatmap,
+        colorscale=[[0, 'white'],
+                    [0.0000000000000001, '#0d0887'],
+                    [0.1111111111111111, '#46039f'],
+                    [0.2222222222222222, '#7201a8'],
+                    [0.3333333333333333, '#9c179e'],
+                    [0.4444444444444444, '#bd3786'],
+                    [0.5555555555555556, '#d8576b'],
+                    [0.6666666666666666, '#ed7953'],
+                    [0.7777777777777778, '#fb9f3a'],
+                    [0.8888888888888888, '#fdca26'],
+                    [1.0, '#f0f921']],
+        showscale=False,
+        xgap=1,
+        ygap=1
+    )]
+    layout = dict(
+        yaxis=dict(
+            autorange = "reversed",
+            tickvals = [i for i in range(0, len(hours), 2)],
+            ticktext = [hours[i].split('-')[0] for i in range(0, len(hours), 2)]
+        ),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=0, r=0, t=0, b=0)
+    )
+
+    # Return
+    figure = go.Figure(data=data, layout=layout)
+    return figure
 
 def draw_map():
     '''
@@ -29,8 +135,6 @@ def draw_map():
     Returns:
         figure: The plotly figure, with the map drawn
     '''
-    # Get longitude and latitude, plus address line
-
     # Create map
     data = [go.Scattermapbox(
         lat=[str(latitude)],
@@ -46,7 +150,7 @@ def draw_map():
     layout = dict(
         hovermode='closest',
         mapbox=dict(
-            style="open-street-map",
+            style='open-street-map',
             bearing=0,
             center=go.layout.mapbox.Center(
                 lat=latitude,
@@ -82,7 +186,7 @@ def create_contact_layout():
     info = dcore.Markdown(contact_md, className='one-half-column', style={'float': 'left', 'align': 'left'})
 
     # Calendar
-    calendar = dcore.Graph(className='one-third-row')
+    calendar = dcore.Graph(figure=draw_calendar(), className='one-third-row')
 
     # Map
     work_map = dcore.Graph(figure=draw_map(), className='one-third-row')
