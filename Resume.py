@@ -18,6 +18,7 @@ import dash_core_components as dcore
 import dash_html_components as dhtml
 
 from assets.content.links import *
+from App import APP
 from Background import create_background_layout
 from Contact import create_contact_layout
 
@@ -86,13 +87,6 @@ def create_layout():
 
     return layout
 
-# App
-APP = dash.Dash(__name__)
-APP.config['suppress_callback_exceptions'] = True
-APP.layout = create_layout()
-with open('assets/content/name.md', 'r') as file:
-    APP.title = file.read().replace('\n', '')
-
 @APP.callback(dash.dependencies.Output('body-div', 'children'),
               [dash.dependencies.Input('tabs', 'value')])
 def tab_picker(value):
@@ -121,4 +115,5 @@ def tab_picker(value):
     return layout
 
 if __name__ == '__main__':
+    APP.layout = create_layout()
     APP.run_server(debug=True)
