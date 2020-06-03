@@ -21,6 +21,9 @@ import plotly.graph_objs as go
 from App import APP
 from assets.content.skills import *
 
+last_name = None
+last_value = None
+
 def dict_to_lists(skills_dict, labels_vec, parents_vec, parent=''):
     '''
     Convert the dictionary to lists of names and parents, recursively
@@ -62,8 +65,19 @@ def draw_skills():
     )]
 
     # Layout
-    # TODO: add titles
     layout = dict(
+        title=dict(
+            text='<b>My Skills</b>',
+            y=0.95,
+            x=0.5,
+            xanchor='center',
+            yanchor='top',
+            font=dict(
+                family='Heebo',
+                size=24,
+                color='black'
+            )
+        ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=0, r=0, t=0, b=0)
@@ -87,6 +101,9 @@ def draw_skill_level(hoverData):
     Returns:
         figure: The plotly bar plot
     '''
+    global last_name
+    global last_value
+
     if hoverData is None:
         # Pick the first ever skill
         current_dict = skills
@@ -105,16 +122,49 @@ def draw_skill_level(hoverData):
         name = hoverData['points'][0]['label']
         value = current_dict[hoverData['points'][0]['label']]
 
+    # If no value selected, keep last
+    if isinstance(value, dict):
+        name = last_name
+        value = last_value
+    else:
+        last_name = name
+        last_value = value
+
+    # color
+    if value <= 20:
+        color = '#BD3B1B'
+    elif value <= 40:
+        color = '#D8A800'
+    elif value <= 60:
+        color = '#B9D870'
+    elif value <= 80:
+        color = '#B6C61A'
+    elif value <= 100:
+        color = '#006344'
+
     # data
-    # TODO: Change color based on value
     data = [go.Bar(
         x = [0],
-        y = [value]
+        y = [value],
+        marker_color = [color],
+        hoverinfo = 'text',
+        hovertext = [str(value) + '%']
     )]
 
     # layout
-    # TODO: add titles
     layout = dict(
+        title=dict(
+            text='<b>' + name + '</b>',
+            y=0.95,
+            x=0.5,
+            xanchor='center',
+            yanchor='top',
+            font=dict(
+                family='Heebo',
+                size=24,
+                color='black'
+            )
+        ),
         xaxis=dict(
             visible=False
         ),
