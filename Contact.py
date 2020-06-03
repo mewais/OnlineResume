@@ -71,51 +71,45 @@ def draw_calendar():
         end = end + timedelta(minutes=30)
     # Colors
     values = {}
-    max_value = 0
-    # Convert events to heatmap
-    # Heatmap is crazy, Z has to be filled by Y axis then X
-    # Meaning hours then days
+    # Convert events to bars
     heatmap = [[0]*len(weekdays) for i in range(len(hours))]
     for event in events:
         start_time = event["DTSTART"].dt
         end_time = event["DTEND"].dt
         name = event["SUMMARY"]
+        day_index = (start_time.date() - start_date).days
+        hour_start = (start_time.hour - 8) * 2 + (start_time.minute // 30)
+        hour_end = (end_time.hour - 8) * 2 + (end_time.minute // 30)
+        text = '<b>' + name + '</b><br>' + start_time.strftime('%a %b %d') + '<br><i>' + start_time.strftime('%I:%M%p') + ' to ' + end_time.strftime('%I:%M%p') + '</i>'
         if name not in values:
-            max_value += 100
-            values[name] = max_value
-        color = values[name]
-        while True:
-            hour_index = (start_time.hour - 8) * 2 + (start_time.minute // 30)
-            day_index = (start_time.date() - start_date).days
-            heatmap[hour_index][day_index] = color
-            start_time = start_time + timedelta(minutes=30)
-            if start_time >= end_time:
-                break
+            values[name] = ([day_index], [hour_start], [hour_end - hour_start], [text])
+        else:
+            values[name][0].append(day_index)
+            values[name][1].append(hour_start)
+            values[name][2].append(hour_end - hour_start)
+            values[name][3].append(text)
     # Plot
-    data = [go.Heatmap(
-        x=weekdays,
-        y=hours,
-        z=heatmap,
-        colorscale=[[0, 'white'],
-                    [0.0000000000000001, '#0d0887'],
-                    [0.1111111111111111, '#46039f'],
-                    [0.2222222222222222, '#7201a8'],
-                    [0.3333333333333333, '#9c179e'],
-                    [0.4444444444444444, '#bd3786'],
-                    [0.5555555555555556, '#d8576b'],
-                    [0.6666666666666666, '#ed7953'],
-                    [0.7777777777777778, '#fb9f3a'],
-                    [0.8888888888888888, '#fdca26'],
-                    [1.0, '#f0f921']],
-        showscale=False,
-        xgap=1,
-        ygap=1
-    )]
+    data = []
+    for name in values:
+        data.append(go.Bar(
+            name=name,
+            x=values[name][0],
+            y=values[name][2],
+            base=values[name][1],
+            hoverinfo='text',
+            hovertext=values[name][3],
+            showlegend=False
+        ))
     layout = dict(
         yaxis=dict(
-            autorange = "reversed",
+            range=[len(hours), 0],
             tickvals = [i for i in range(0, len(hours), 2)],
             ticktext = [hours[i].split('-')[0] for i in range(0, len(hours), 2)]
+        ),
+        xaxis=dict(
+            range=[0, len(weekdays)],
+            tickvals = [i for i in range(len(weekdays))],
+            ticktext = weekdays
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
