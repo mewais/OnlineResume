@@ -185,8 +185,8 @@ def create_contact_layout():
     # Map
     work_map = dcore.Graph(figure=draw_map(), className='one-third-row')
 
-    # Upper half
+    # Layout
     figures = dhtml.Div(children=[calendar, work_map], className='one-half-column', style={'float': 'right', 'align': 'right'})
-    upper_half = dhtml.Div(children=[info, figures], className='two-thirds-row')
+    layout = dhtml.Div(children=[info, figures])
 
-    return upper_half
+    return layout
