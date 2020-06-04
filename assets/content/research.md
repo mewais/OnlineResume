@@ -1,0 +1,80 @@
+## Research and Projects
+
+### FPGA virtualization and containerization
+![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen)
+![](https://img.shields.io/badge/status-Ongoing-yellow)
+### FPGA VNF implementations
+![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen)
+![](https://img.shields.io/badge/status-Ongoing-yellow)
+### ML Accelerator Virtual ISA
+![](https://img.shields.io/badge/-Huawei%20Technologies-brown)
+![](https://img.shields.io/badge/status-Finished-green)
+### GPU LLVM Compiler
+![](https://img.shields.io/badge/-Huawei%20Technologies-brown)
+![](https://img.shields.io/badge/status-Finished-green)
+### Instruction Offloading to HMC
+![](https://img.shields.io/badge/-Personal-informational)
+![](https://img.shields.io/badge/status-On%20Hold-yellow)
+![](https://img.shields.io/badge/-Detailed%20Results-important)
+
+This was a personal project out of interest. It aimed at utilizing 3D memories called Hybrid Memory Cubes, which are capable of executing some simple operations in memory. The idea is to use a metric called "Memory Reuse Distance" to decide which instructions are not utilizing the caches and are thus better suited for offloading and might benefit more from execution directly on the HMC. So far the following is done:
+* Analysis of benchmarks to determine hot spots.
+* Idealization (i.e. upper limit improvement) of all benchmarks.  
+
+The following is yet to be done:
+* Simulation of real offloading (with delay) in a simulated system.
+* Building a predictor to decide what instructions to offload.
+
+This project is on hold until I have free time to continue working on it.
+
+### Cache Compression and Approximation
+![](https://img.shields.io/badge/-University%20of%20British%20Columbia-blueviolet)
+![](https://img.shields.io/badge/status-Finished-green)
+![](https://img.shields.io/badge/-Detailed%20Results-important)
+
+This was my work during my MSc, eventually this was published in my thesis, plus two conference papers. This work was focused on building caches that support compression, or approximation, or both. During this work I did the following:
+* Analysis of data patterns, inter-block, and intra-block entropy in cache dumps of multiple benchmarks.
+* Design of a new cache compression scheme that is capable of performing inter and intra line compression.
+* Implementation of the new cache design as well as previous implementations using the zsim simulator.
+* Investigation of approximation (lossy compression) and incorporating it in the compressed cache designs.
+* All the different caches and their implementation can be found [here](https://github.com/mewais/zsim-cache-compression).
+
+### Home Cooked Android App
+![](https://img.shields.io/badge/-Personal-informational)
+![](https://img.shields.io/badge/status-Abandoned-red)
+
+This was one of my personal projects, the idea was to build an Android and iOS apps similar in essense to Uber Eats, but on a personal level. In other words, people who like cooking or want to cook professionally can do so and sell their food on the app (like restaurant on Uber Eats), and people like me who just want food can order through the app just like we do today with Uber Eats. The app had gone through a lot of development and was close to completion, when unfortunately I found out that it would be illegal in the US and Canada, thus bringing it to a halt.
+![](assets/images/app.png)
+
+### Using STT-RAM as main memory
+![](https://img.shields.io/badge/-American%20University%20of%20Cairo-ff69b4)
+![](https://img.shields.io/badge/status-Finished-green)
+
+This research project was done when I was working at the AUC. The project targeted using Spin Transfer Torque magnetic memories as main memories. Which required modifying the Linux kernel virtual memory. During this project I did the following:
+* Analyzed data similarities in memory page dumps of multiple benchmarks.
+* Experimented with multiple hashing techniques to be able to identify similar pages.
+* Used Gem5 and NVMain simulators to create a full computing system with STT-RAM as main memory.
+* [Modified the Linux kernel virtual memory system](https://github.com/mewais/NVMLinux), to allow swapping in pages to similar blocks with less overhead.  
+
+This work was finished successfully and resulted in a conference paper.
+
+### Hardware Trojan Detection
+![](https://img.shields.io/badge/-Alexandria%20University-9cf)
+![](https://img.shields.io/badge/status-Finished-green)
+
+This was a research project done while I was doing my BSc. It aimed at detecting Trojans inserted into third party IP cores. During this project I was able to:
+* Build and test a hardware trojan aimed at an encryption accelerator. With a very small footprint and hard to detect trigger condition.
+* Design and implement a technique that uses circuit redundancy along with ahead of time execution to detect hardware Trojans and their attacks.  
+
+This work was finished successfully and resulted in a conference paper.
+
+### ASIC implementation of a TMS320C25 DSP
+![](https://img.shields.io/badge/-Alexandria%20University-9cf)
+![](https://img.shields.io/badge/status-Finished-green)
+
+This project was sponsored by [Si-Ware Systems](https://www.si-ware.com/) and was my undergraduate graduation project (Thesis). I had achieved the following:
+* VHDL Implementation and verification of various building blocks of the TMS320C25 chip.
+* FPGA Testing of the TMS320C25 chip on a Xilinx FPGA.
+* Full ASIC Synthesis, Timing Analysis, and Post Synthesis Verification of the TMS320C25 using Synopsys Design Compiler, Prime Time, and Modelsim.  
+
+The chip reached fabrication stage.
