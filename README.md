@@ -30,3 +30,7 @@ I tried to separate the content from the code as much as possible. The structure
 - Create a new `favicon.ico` file, you can convert a normal image into an icon using [this website](https://icoconvert.com/)
 - Start modifying the content as needed
 - Start the website by running `python3 Resume.py`
+
+## TODOs
+- When I become an instructor (i.e. be responsible for entire courses), add links to separate pages for course info, data, results, etc.
+- Find and use an API to get citations of papers, display some nice visualizations for each paper in the publications page.
