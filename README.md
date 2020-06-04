@@ -17,14 +17,16 @@ I tried to separate the content from the code as much as possible. The structure
     - `links.py` includes a list of links that are used in the tab footer.
     - `summary.md` includes a summary about yourself, will be displayed in the background page.
     - `history.py` includes your work and education history, plus some notable events if you choose to. These are also displayed as a figure in the background page.
+    - `publications.md` includes all your publications, with some nice coloring and decorations, in markdown format. This is the entirety of the publications page.
+    - `skills.py` includes all your skills, categorized and subcategorized with no restrictions on how many levels deep you want to go.
     - `contact.md` includes your contact information, this will be rendered directly in the contact me page of the website.
+    - `calendar.py` includes a single link to a shareable calendar, plus a simple variable choosing whether Saturday or Monday is the first day of the week.
     - `location.py` includes the location of your work in a simple format, used to create the map in the contact me page.
 
 ## How to use
 - If you don't already have it, install and setup `python3` and `pip`.
-- Install plotly and dash
-  - `sudo pip3 install plotly`
-  - `sudo pip3 install dash`
+- Install the dependencies
+  - `sudo pip3 install -r requirements.txt`
 - Create a new `favicon.ico` file, you can convert a normal image into an icon using [this website](https://icoconvert.com/)
 - Start modifying the content as needed
 - Start the website by running `python3 Resume.py`
