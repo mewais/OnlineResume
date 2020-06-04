@@ -73,6 +73,7 @@ skills = {
         'QT5/GTK': 70,
         'Android': 80,
         'Bash': 80,
-        'TCL': 70,
+        'TCL': 60,
+        'SQL': 40
     }
 }

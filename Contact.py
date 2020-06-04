@@ -174,7 +174,6 @@ def create_contact_layout():
     '''
 
     # Info
-    # FIXME: Unable to render FontAwesome from the MD
     with open('assets/content/contact.md', 'r') as file:
         contact_md = file.read()
     info = dcore.Markdown(contact_md, className='one-half-column', style={'float': 'left', 'align': 'left'})
