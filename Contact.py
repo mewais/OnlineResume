@@ -151,7 +151,7 @@ def draw_map():
                 lon=longitude
             ),
             pitch=0,
-            zoom=5
+            zoom=13
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
