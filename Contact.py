@@ -179,10 +179,10 @@ def create_contact_layout():
     info = dcore.Markdown(contact_md, className='one-half-column', style={'float': 'left', 'align': 'left'})
 
     # Calendar
-    calendar = dcore.Graph(figure=draw_calendar(), className='one-third-row')
+    calendar = dcore.Graph(figure=draw_calendar(), className='one-half-row')
 
     # Map
-    work_map = dcore.Graph(figure=draw_map(), className='one-third-row')
+    work_map = dcore.Graph(figure=draw_map(), className='one-half-row')
 
     # Layout
     figures = dhtml.Div(children=[calendar, work_map], className='one-half-column', style={'float': 'right', 'align': 'right'})

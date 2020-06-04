@@ -1,6 +1,6 @@
 ## Teaching
 
-* **ECE297 Design and Communications**
+* **ECE297 Design and Communications**  
   designing and completing a large software project in a team, and communicating effectively. Use GTK to build maps, routing algorithms, git, and other programming/project management skills.  
   ![](https://img.shields.io/badge/-TA-orange)
   ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
