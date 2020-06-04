@@ -132,11 +132,10 @@ def draw_history_figure():
             )
         ),
         barmode='stack',
-        # FIXME: Still need to correctly show months on the X axis
         xaxis=dict(
-            tickmode='auto',
-            ticktext=x_labels,
-            tickvals=list(range(len(x_labels))),
+            # Show in Qs
+            ticktext=[x_labels[i] for i in range(0, len(x_labels), 4)],
+            tickvals=list(range(0, len(x_labels), 4)),
             showgrid=False,
             zeroline=False
         ),

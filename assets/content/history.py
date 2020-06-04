@@ -23,7 +23,7 @@ experience = [{
     'start': datetime.datetime(2015, 1, 1),
     'end': datetime.datetime(2016, 8, 1)
 }, {
-    'name': 'Research and Teaching Assistant',
+    'name': 'Teaching Assistant',
     'location': 'German University in Cairo',
     'start': datetime.datetime(2015, 9, 1),
     'end': datetime.datetime(2016, 1, 1)
