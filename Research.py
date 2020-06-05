@@ -31,5 +31,5 @@ def create_research_layout():
     with open('assets/content/research.md', 'r') as file:
         research_md = file.read()
     research = dcore.Markdown(research_md)
-    layout = dhtml.Div(children=[research], className='whole-column whole-row', style={'overflowY': 'scroll'})
+    layout = dhtml.Div(children=[research], className='whole-column whole-row markdown', style={'overflowY': 'scroll'})
     return layout

@@ -45,7 +45,7 @@ The following is yet to be done:
 * Simulation of real offloading (with delay) in a simulated system.
 * Building a predictor to decide what instructions to offload.
 
-This project is on hold until I have free time to continue working on it, it can be found [here](https://github.com/mewais/AwesomeInstructionOffloading).  
+This project is on hold until I have free time to continue working on it, it can be found [here](https://github.com/mewais/AwesomeInstructionOffloading). A page with detailed results of the work will be coming soon.  
   
 
 ### Cache Compression and Approximation ![](https://img.shields.io/badge/-University%20of%20British%20Columbia-blueviolet) ![](https://img.shields.io/badge/status-Finished-green) ![](https://img.shields.io/badge/-Detailed%20Results-important)
@@ -54,14 +54,18 @@ This was my work during my MSc, eventually this was published in my thesis, plus
 * Analysis of data patterns, inter-block, and intra-block entropy in cache dumps of multiple benchmarks.
 * Design of a new cache compression scheme that is capable of performing inter and intra line compression.
 * Implementation of the new cache design as well as previous implementations using the zsim simulator.
-* Investigation of approximation (lossy compression) and incorporating it in the compressed cache designs.
-* All the different caches and their implementation can be found [here](https://github.com/mewais/zsim-cache-compression).  
+* Investigation of approximation (lossy compression) and incorporating it in the compressed cache designs.  
+
+All the different caches and their implementation can be found [here](https://github.com/mewais/zsim-cache-compression). A page with the detailed results of this work will be coming soon.  
   
 
 ### Home Cooked Android App ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Abandoned-red)
 
-This was one of my personal projects, the idea was to build an Android and iOS apps similar in essense to Uber Eats, but on a personal level. In other words, people who like cooking or want to cook professionally can do so and sell their food on the app (like restaurant on Uber Eats), and people like me who just want food can order through the app just like we do today with Uber Eats. The app had gone through a lot of development and was close to completion, when unfortunately I found out that it would be illegal in the US and Canada, thus bringing it to a halt.
-![](assets/images/app.png)  
+I love food, in fact, I love it way too much. This was one of my personal projects, the idea was to build an Android and iOS apps similar in essence to Uber Eats, but on a personal level. In other words, people who like cooking or want to cook professionally can do so and sell their food on the app (like restaurant on Uber Eats), and people like me who just want food can order through the app just like we do today with Uber Eats. The app had gone through a lot of development and was close to completion, when unfortunately I found out that it would be illegal in the US and Canada, thus bringing it to a halt.
+The app utilized google authentication for login/signup, and google firebase database and firebase storage as its database for users, dishes, orders, images, etc. It was only lacking a payment option.  
+![](assets/images/app1.png)
+![](assets/images/app2.png)
+![](assets/images/app3.png)  
   
 
 ### Using STT-RAM as main memory ![](https://img.shields.io/badge/-American%20University%20of%20Cairo-ff69b4) ![](https://img.shields.io/badge/status-Finished-green)
