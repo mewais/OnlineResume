@@ -5,3 +5,4 @@ dash==1.12.0
 MonthDelta==0.9.1
 icalendar==4.0.6
 recurring_ical_events==0.1.16b0
+gunicorn==20.0.4

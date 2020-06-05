@@ -118,6 +118,8 @@ def tab_picker(value):
         layout = CONTACT
     return layout
 
+server = APP.server
+APP.layout = create_layout()
+
 if __name__ == '__main__':
-    APP.layout = create_layout()
     APP.run_server(debug=True)
