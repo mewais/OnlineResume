@@ -67,14 +67,14 @@ def create_layout():
     scholar_icon = dhtml.Img(src='assets/icons/gs.png', className='icon')
     linkedin_icon = dhtml.Img(src='assets/icons/li.png', className='icon')
     stackof_icon = dhtml.Img(src='assets/icons/so.png', className='icon')
-    email_icon = dhtml.Img(src='assets/icons/em.png', className='icon')
+    resume_icon = dhtml.Img(src='assets/icons/cv.png', className='icon')
 
     github_href = dhtml.A(children=[github_icon], href=github_link)
     scholar_href = dhtml.A(children=[scholar_icon], href=scholar_link)
     linkedin_href = dhtml.A(children=[linkedin_icon], href=linkedin_link)
     stackof_href = dhtml.A(children=[stackof_icon], href=stackof_link)
-    email_href = dhtml.A(children=[email_icon], href='mailto:'+email_link)
-    footer = dhtml.Div(children=[github_href, scholar_href, linkedin_href, stackof_href, email_href], className='tab-footer')
+    resume_href = dhtml.A(children=[resume_icon], href=resume_link)
+    footer = dhtml.Div(children=[github_href, scholar_href, linkedin_href, stackof_href, resume_href], className='tab-footer')
     # Footer container makes is stick to the bottom
     footer_container = dhtml.Div(children=[footer], className='tab-footer-container')
 
