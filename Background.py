@@ -136,6 +136,7 @@ def draw_history_figure():
             # Show in Qs
             ticktext=[x_labels[i] for i in range(0, len(x_labels), 4)],
             tickvals=list(range(0, len(x_labels), 4)),
+            tickfont=dict(size=16),
             showgrid=False,
             zeroline=False
         ),
