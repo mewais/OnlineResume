@@ -104,12 +104,14 @@ def draw_calendar():
         yaxis=dict(
             range=[len(hours), 0],
             tickvals = [i for i in range(0, len(hours), 2)],
-            ticktext = [hours[i].split('-')[0] for i in range(0, len(hours), 2)]
+            ticktext = [hours[i].split('-')[0] for i in range(0, len(hours), 2)],
+            fixedrange=True
         ),
         xaxis=dict(
             range=[0, len(weekdays)],
             tickvals = [i for i in range(len(weekdays))],
-            ticktext = weekdays
+            ticktext = weekdays,
+            fixedrange=True
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',

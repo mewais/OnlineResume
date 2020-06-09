@@ -138,7 +138,8 @@ def draw_history_figure():
             tickvals=list(range(0, len(x_labels), 4)),
             tickfont=dict(size=16),
             showgrid=False,
-            zeroline=False
+            zeroline=False,
+            fixedrange=True
         ),
         yaxis=dict(
             ticktext=['Education', '', 'Experience'],
@@ -147,7 +148,8 @@ def draw_history_figure():
             showgrid=False,
             zeroline=True,
             zerolinewidth=5,
-            zerolinecolor='black'
+            zerolinecolor='black',
+            fixedrange=True
         ),
         margin=dict(pad=20),
         plot_bgcolor='rgba(0,0,0,0)',
