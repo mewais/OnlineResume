@@ -16,6 +16,7 @@
 import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
+import importlib
 
 from assets.content.links import *
 from App import APP
@@ -119,7 +120,28 @@ def tab_picker(value):
     return layout
 
 server = APP.server
-APP.layout = create_layout()
+APP.layout = dhtml.Div([
+    dcore.Location(id='url', refresh=False),
+    dhtml.Div(id='main-page')
+])
+
+@APP.callback(dash.dependencies.Output('main-page', 'children'),
+              [dash.dependencies.Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/':
+        return create_layout()
+    try:
+        sub = importlib.import_module('assets.content.'+pathname.strip('/'))
+    except:
+        return dhtml.Div([
+            dhtml.H3('No such page')
+        ])
+    try:
+        layout = sub.create_layout()
+    except:
+        return dhtml.Div([
+            dhtml.H3('Page under construction')
+        ])
 
 if __name__ == '__main__':
     APP.run_server(debug=True)
