@@ -15,7 +15,7 @@
 
 import dash
 
-APP = dash.Dash("Resume")
+APP = dash.Dash('Resume', external_stylesheets=['assets/custom.css'])
 APP.config['suppress_callback_exceptions'] = True
 with open('assets/content/name.md', 'r') as file:
     APP.title = file.read().replace('\n', '')

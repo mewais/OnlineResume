@@ -12,3 +12,26 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import dash
+import dash_core_components as dcore
+import dash_html_components as dhtml
+
+def create_layout():
+    '''
+    Initialize the general parent layout of the page
+
+    Args:
+
+    Returns:
+        layout: The HTML body of the whole page.
+    '''
+    # Intro
+    with open('assets/content/InstructionOffloadingHMC/Intro.md') as file:
+        intro_md = file.read()
+    intro = dcore.Markdown(intro_md, className='article', highlight_config=dict(theme='dark'))
+
+    # Code hotspots
+
+    page = dhtml.Div(children=[intro], className='article-page')
+    return page

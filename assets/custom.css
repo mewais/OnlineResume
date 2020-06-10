@@ -29,6 +29,7 @@ body {
 	width: 100vw;
 	margin: 0px;
 	padding: 0px;
+	background: #cccccc;
 	font-family: 'Font Awesome 5 Free', 'Heebo', sans-serif;
 }
 
@@ -215,4 +216,23 @@ h3, h4, h5, h6 {
     margin-bottom: 1vh;
     margin-right: 1%;
     margin-left: 1%;
+}
+
+/* Articles */
+.article-page {
+    height: 100vh;
+	width: 100vw;
+	background: #cccccc;
+    color: black;
+	font-family: 'Font Awesome 5 Free', 'Heebo', sans-serif;
+}
+
+.article-page H2 {
+	text-align: left;
+}
+
+.article {
+    width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
 }

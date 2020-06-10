@@ -38,7 +38,7 @@ CONTACT = create_contact_layout()
 
 def create_layout():
     '''
-    Initialize the general parent layout of ETop
+    Initialize the general parent layout of our Resume
 
     Args:
 
@@ -131,7 +131,7 @@ def display_page(pathname):
     if pathname == '/':
         return create_layout()
     try:
-        sub = importlib.import_module('assets.content.'+pathname.strip('/'))
+        sub = importlib.import_module('subpages.'+pathname.strip('/'))
     except:
         return dhtml.Div([
             dhtml.H3('No such page')
@@ -142,6 +142,7 @@ def display_page(pathname):
         return dhtml.Div([
             dhtml.H3('Page under construction')
         ])
+    return layout
 
 if __name__ == '__main__':
     APP.run_server(debug=True)
