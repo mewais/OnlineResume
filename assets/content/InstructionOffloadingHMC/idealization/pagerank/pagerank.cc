@@ -487,4 +487,3 @@ void init_weights(int N, int DEG, double** W, int** W_index)
       }
    }
 }
-

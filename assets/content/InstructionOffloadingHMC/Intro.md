@@ -26,4 +26,6 @@ The following figure(s) shows all the benchmarks, the triggers in each of them, 
 
 Note that some of these should be able to return the results of their operations back.
 
+An asterisk on the left side will mark lines with triggers to zsim.
+
 

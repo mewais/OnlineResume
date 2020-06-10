@@ -460,4 +460,3 @@ void init_weights(int N, int DEG, int** W, int** W_index)
       //printf("\n");
    }
 }
-

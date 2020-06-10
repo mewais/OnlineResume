@@ -608,4 +608,3 @@ void init_weights(int N, int DEG, float** W_f, int** W_index)
       //printf("\n");
    }
 }
-

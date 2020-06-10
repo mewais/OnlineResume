@@ -128,9 +128,43 @@ def tab2_picker(benchmark, config):
     if config == '1':
         with open(folder + '/' + c_file, 'r') as file:
             code = file.read()
+        split_code = code.split('\n')
+        numlines = len(split_code)
+        numlen = len(str(numlines))
         code = '```cpp\n' + code
         code += '\n```'
-        return dcore.Markdown(code, highlight_config=dict(theme='dark'))
+        lines = '```cpp\n'
+        for i in range(numlines):
+            if 'zsim' in split_code[i]:
+                lines += '* ' + str(i + 1).zfill(numlen) + ' |\n'
+            else:
+                lines += '  ' + str(i + 1).zfill(numlen) + ' |\n'
+        lines += '```'
+        lines = dcore.Markdown(lines, highlight_config=dict(theme='dark'), style={'float':'left', 'align':'left'})
+        code = dcore.Markdown(code, highlight_config=dict(theme='dark'))
+        return [lines, code]
     # Otherwise, apply patch first
     patch_file = folder + '/ideal_' + labels[benchmark][int(config)-1] + '.patch'
-    print(patch_file)
+    pset = patch.fromfile(patch_file)
+    success = pset.apply(root=folder)
+    # Read the updated file
+    with open(folder + '/' + c_file, 'r') as file:
+        code = file.read()
+    split_code = code.split('\n')
+    numlines = len(split_code)
+    numlen = len(str(numlines))
+    code = '```cpp\n' + code
+    code += '\n```'
+    # Then revert it
+    success = pset.revert(root=folder)
+    # Finally show it
+    lines = '```cpp\n'
+    for i in range(numlines):
+        if 'zsim' in split_code[i]:
+            lines += '* ' + str(i + 1).zfill(numlen) + ' |\n'
+        else:
+            lines += '  ' + str(i + 1).zfill(numlen) + ' |\n'
+    lines += '```'
+    lines = dcore.Markdown(lines, highlight_config=dict(theme='dark'), style={'float':'left', 'align':'left'})
+    code = dcore.Markdown(code, highlight_config=dict(theme='dark'))
+    return [lines, code]
