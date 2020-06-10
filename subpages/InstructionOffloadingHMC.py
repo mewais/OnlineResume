@@ -14,10 +14,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import h5py
 import dash
 import patch
 import dash_core_components as dcore
 import dash_html_components as dhtml
+import plotly.graph_objs as go
 from App import APP
 
 labels = {}
@@ -53,12 +55,59 @@ def create_layout():
     inner_tabs = dcore.Tabs(id='inner-tabs', value='1', parent_className='tabs')
     inner_tab_div = dhtml.Div(children=[inner_tabs], className='article-tab-div')
     file_div = dhtml.Div(id='file-body-div', className='article-body-div', style={'overflowY': 'scroll'})
+    figure_div = dcore.Graph(id='plot-div', className='article-body-div')
 
-    page = dhtml.Div(children=[intro, outer_tab_div, inner_tab_div, file_div], className='article-page')
+    page = dhtml.Div(children=[intro, outer_tab_div, inner_tab_div, file_div, figure_div], className='article-page')
     return page
 
+def plot_cycles(folder, files):
+    '''
+    Plot the cycles of all the configs in the folder
+
+    Args:
+        folder: the folder including the files to plot
+        files: the list of files to plot
+
+    Return:
+        figure: the plotted figure
+    '''
+    count = 0
+    data = []
+    for file in files:
+        h5file = h5py.File(folder + '/ideal_' + file + '.h5', 'r')
+        cycles = h5file['stats']['root']['beefy'][-1][0]['cycles']
+        data.append(go.Bar(x=[count], y=[cycles], name=file))
+        count += 1
+    layout = dict(
+        title=dict(
+            text='<b>Cycles</b>',
+            y=0.95,
+            x=0.5,
+            xanchor='center',
+            yanchor='top',
+            font=dict(
+                family='Heebo',
+                size=24,
+                color='black'
+            )
+        ),
+        xaxis=dict(
+            ticktext=files,
+            tickvals=list(range(count)),
+            fixedrange=True
+        ),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=0, r=0, t=0, b=0)
+    )
+
+    # Return
+    figure = go.Figure(data=data, layout=layout)
+    return figure
+
 @APP.callback([dash.dependencies.Output('inner-tabs', 'children'),
-               dash.dependencies.Output('inner-tabs', 'value')],
+               dash.dependencies.Output('inner-tabs', 'value'),
+               dash.dependencies.Output('plot-div', 'figure')],
               [dash.dependencies.Input('outer-tabs', 'value')])
 def tab1_picker(value):
     '''
@@ -69,6 +118,8 @@ def tab1_picker(value):
 
     Return:
         tabs: the tabs of the second tab selector
+        value: the default value of the inner tabs, always 1
+        figure: the figure of the plot body
     '''
     global labels
     # Get the files we need
@@ -99,7 +150,7 @@ def tab1_picker(value):
     tabs.append(dcore.Tab(label='hmc', value=str(counter), className='article-unselected-tab', selected_className='article-selected-tab'))
     tabs.append(dcore.Tab(label='ehmc', value=str(counter+1), className='article-unselected-tab', selected_className='article-selected-tab'))
     tabs.insert(0, dcore.Tab(label='clean', value='1', className='article-unselected-tab', selected_className='article-selected-tab'))
-    return tabs, '1'
+    return tabs, '1', plot_cycles('assets/content/InstructionOffloadingHMC/idealization/'+folder, names)
 
 @APP.callback(dash.dependencies.Output('file-body-div', 'children'),
               [dash.dependencies.Input('outer-tabs', 'value'),
@@ -113,7 +164,7 @@ def tab2_picker(benchmark, config):
         config: the value of the second selected tab
 
     Return:
-        layout: the selected layout
+        layout: a list of the layout children
     '''
     global labels
     folder = sorted(list(os.listdir('assets/content/InstructionOffloadingHMC/idealization/')))[int(benchmark)-1]
