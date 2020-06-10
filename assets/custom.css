@@ -236,3 +236,50 @@ h3, h4, h5, h6 {
     margin-right: 20vw;
     margin-left: 20vw;
 }
+
+.article-tab-div {
+	width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
+	background: #363636;
+    color: white;
+}
+
+.article-body-div {
+	width: 60vw;
+	height: 50vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+	background: #cccccc;
+    color: black;
+}
+
+.article-unselected-tab {
+	background-color: transparent !important;
+    color: white;
+    padding: 15px !important;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    font-size: 16px;
+    font-weight: 600;
+	text-align: center !important;
+}
+
+.article-selected-tab {
+	background-color: rgba(0, 0, 0, 0.6) !important;
+    color: white !important;
+    padding: 15px !important;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    font-size: 16px;
+    font-weight: 600;
+	text-align: center !important;
+}
