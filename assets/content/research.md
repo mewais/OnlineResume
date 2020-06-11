@@ -35,7 +35,7 @@ This was the bulk of my work while at Huawei Technologies. I was part of team wo
 The compiler was finished after I left Huawei, it is now being used successfully and the GPUs will be available in consumer phones sometime soon.  
   
 
-### Instruction Offloading to HMC ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-On%20Hold-yellow) [![](https://img.shields.io/badge/-Detailed%20Results-important)](/InstructionOffloadingHMC)
+### Instruction Offloading to HMC ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Abandoned-red)
 
 This was a personal project out of interest. It aimed at utilizing 3D memories called Hybrid Memory Cubes, which are capable of executing some simple operations in memory. The idea is to use a metric called "Memory Reuse Distance" to decide which instructions are not utilizing the caches and are thus better suited for offloading and might benefit more from execution directly on the HMC. So far the following is done:
 * Analysis of benchmarks to determine hot spots.
@@ -45,7 +45,7 @@ The following is yet to be done:
 * Simulation of real offloading (with delay) in a simulated system.
 * Building a predictor to decide what instructions to offload.
 
-This project is on hold until I have free time to continue working on it, it can be found [here](https://github.com/mewais/AwesomeInstructionOffloading). A page with detailed results of the work can be found [here](/InstructionOffloadingHMC).  
+This project was abandoned when I found a paper implementing the exact same idea. My code and progress can be found [here](https://github.com/mewais/AwesomeInstructionOffloading).  
   
 
 ### Cache Compression and Approximation ![](https://img.shields.io/badge/-University%20of%20British%20Columbia-blueviolet) ![](https://img.shields.io/badge/status-Finished-green) [![](https://img.shields.io/badge/-Detailed%20Results-important)](/CacheCompression)
