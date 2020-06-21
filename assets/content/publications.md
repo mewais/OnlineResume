@@ -10,7 +10,7 @@
   *Amin Ghasemazar, **Mohammad Ewais**, Prashant Nair, Mieszko Lis*  
   *2020 Design, Automation and Test in Europe Conference and Exhibition (DATE 2020)*  
   ![](https://img.shields.io/badge/-conference%20paper-green)
-  [![](https://img.shields.io/badge/-link-blue)]()
+  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/document/9116279)
 
 * **Combining inter and intra-line cache compression**  
   ***Mohammad Ewais***  

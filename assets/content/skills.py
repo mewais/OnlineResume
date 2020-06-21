@@ -22,12 +22,12 @@ skills = {
             'Modelsim': 90,
             'DesignCompiler': 70,
             'PrimeTime': 70,
-            'HSpice': 40
+            'HSpice': 30
         },
         'HDLs': {
             'VHDL': 90,
             'Verilog': 80,
-            'HLS': 80
+            'HLS': 60
         }
     },
     'Computer Arch': {

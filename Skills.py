@@ -171,7 +171,7 @@ def draw_skill_level(hoverData):
         yaxis=dict(
             range=[0,101],
             tickvals=[0,20,40,60,80,100],
-            ticktext=['None','Poor','Below Average','Good','Excellent','Master']
+            ticktext=['None','Just Started','Know Some','Good','Excellent','Master']
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)'
