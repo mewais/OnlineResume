@@ -17,6 +17,7 @@ import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
 import plotly.graph_objs as go
+import plotly.colors as co
 import icalendar
 import recurring_ical_events
 import urllib.request
@@ -90,17 +91,22 @@ def draw_calendar():
             values[name][3].append(text)
     # Plot
     data = []
+    color = 0
     for name in values:
-        data.append(go.Bar(
-            name=name,
-            x=values[name][0],
-            y=values[name][2],
-            base=values[name][1],
-            hoverinfo='text',
-            hovertext=values[name][3],
-            showlegend=False
-        ))
+        for i in range(len(values[name][0])):
+            data.append(go.Bar(
+                name=name,
+                x=[values[name][0][i]],
+                y=[values[name][2][i]],
+                base=[values[name][1][i]],
+                hoverinfo='text',
+                hovertext=[values[name][3][i]],
+                showlegend=False,
+                marker_color=co.DEFAULT_PLOTLY_COLORS[color % len(co.DEFAULT_PLOTLY_COLORS)]
+            ))
+        color += 1
     layout = dict(
+        barmode='overlay',
         yaxis=dict(
             range=[len(hours), 0],
             tickvals = [i for i in range(0, len(hours), 2)],
