@@ -15,6 +15,12 @@ This is currently my main focus in my PhD. The idea is to allow FPGAs to be firs
 This is part of my PhD work, which is implementing different 100G VNFs on FPGAs, this is still in its early phases (as is my PhD, currently). So far we have an implementation of a 100G Firewall. This is still ongoing with more VNFs.  
   
 
+### Online Resume ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Finished-green)
+This website, the one you're looking at right now. I wanted something that includes everything I'd like to add in my resume, without the size restrictions. This website will be under constant improvement and addition to make it up to date.
+
+The source code can be found [here](https://github.com/mewais/Resume)
+
+
 ### ML Accelerator Virtual ISA ![](https://img.shields.io/badge/-Huawei%20Technologies-brown) ![](https://img.shields.io/badge/status-Finished-green)
 
 This was another project I worked on while at Huawei Technologies. I was mainly leading the following aspects:
