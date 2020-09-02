@@ -1,19 +1,33 @@
 ## Research and Projects
 
+### HDLElaborator ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Ongoing-yellow)
+
+A couple of years ago I tried to build a CAD tool that would be able to compile both VHDL and Verilog. We started with Lex and Yacc grammars and started using them for parsing. This quickly proved to be a very tedious task that we didn't have enough time for.
+Recently I came across the awesome [hdlConvertor library](https://github.com/Nic30/hdlConvertor) library. The library is capable of reading Verilog and VHDL files, and producing a unified AST for them. So I decided to revisit the topic and create my HDLElaborator library, taking in the AST as an input and generating a netlist as an output. This is currently under heavy development and is my current side project.
+The library will be open sourced when it starts to be at least partially functional.
+
+
 ### FPGA virtualization and containerization ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
 
 This is currently my main focus in my PhD. The idea is to allow FPGAs to be first class citizens in datacenters, essentially being able to virtualize them, deploy applications on them, share them between different users, and be able to scale up their applications. Currently we're able to do the following:
 * Disover FPGAs connected to datacenter nodes and advertise them as available resources. This is currently two components:
   * A modification to kubernetes device plugin API, found [here](https://github.com/kubernetes/kubernetes/pull/91190)
   * A device plugin to discover and utilize FPGAs, found [here](https://github.com/mewais/FPGA-K8s-DevicePlugin)
-* Build docker containers that utilize FPGAs, this currently is an FPGA based VNF.
-* Deploy FPGA containers and utilize them in a cluster  
-  
+* Build docker containers that utilize FPGAs, this currently is focused on FPGA based VNFs.
+* Deploy FPGA containers and utilize them in a cluster.
+
 
 ### FPGA VNF implementations ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
 
-This is part of my PhD work, which is implementing different 100G VNFs on FPGAs, this is still in its early phases (as is my PhD, currently). So far we have an implementation of a 100G Firewall. This is still ongoing with more VNFs.  
+This is part of my PhD work, which is implementing different 100G VNFs on FPGAs, this is still in its early phases (as is my PhD, currently). So far we have an implementation of a 100G Firewall and a 100G Traffic Generator. This is still ongoing with more VNFs.  
   
+
+### ShellCreator ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Maintained-green)
+
+[ShellCreator](https://github.com/mewais/ShellCreator) is asimple python library that helps create complete shells (command line interfaces) for user applications. Think the interactive shell of Vivado, Design Compiler, a bash shell, etc. The library has support for data types, if statements, while statements, autocompletion, colorization, indentation, and many other features. Users can simply extend the library with their own defined commands.
+![](assets/images/shell1.png)
+![](assets/images/shell2.png)
+
 
 ### Online Resume ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Finished-green)
 This website, the one you're looking at right now. I wanted something that includes everything I'd like to add in my resume, without the size restrictions. This website will be under constant improvement and addition to make it up to date.

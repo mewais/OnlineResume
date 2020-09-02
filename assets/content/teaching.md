@@ -1,5 +1,10 @@
 ## Teaching
 
+* **ECE253 Digital and Computer Systems**  
+  Combinational and sequential circuits, digital design using Verilog, FSMs, interfacing with peripherals, and pipelining, instruction set architectures, CPU organizarion, assembly programming.  
+  ![](https://img.shields.io/badge/-TA-orange)
+  ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
+  ![](https://img.shields.io/badge/-Fall%202020-gray)
 * **ECE297 Design and Communications**  
   designing and completing a large software project in a team, and communicating effectively. Use GTK to build maps, routing algorithms, git, and other programming/project management skills.  
   ![](https://img.shields.io/badge/-TA-orange)
@@ -15,6 +20,7 @@
   ![](https://img.shields.io/badge/-TA-orange)
   ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
   ![](https://img.shields.io/badge/-Fall%202019-gray)
+  ![](https://img.shields.io/badge/-Fall%202020-gray)
 * **CPEN311 Digital System Design Lab**  
   Build an embedded system using FPGA SoCs, projects include a hardware component, a software component, interfacing with outside peripherals, databases, android apps, etc.  
   ![](https://img.shields.io/badge/-TA-orange)
