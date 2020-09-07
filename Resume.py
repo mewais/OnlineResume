@@ -13,10 +13,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
 import dash
 import dash_core_components as dcore
 import dash_html_components as dhtml
 import importlib
+import requests
+import pymysql
+from datetime import datetime
+from flask import request
 
 from assets.content.links import *
 from App import APP
@@ -125,10 +130,51 @@ APP.layout = dhtml.Div([
     dhtml.Div(id='main-page')
 ])
 
+def register_visit(key, data):
+    con = pymysql.connect(os.environ.get('DATABASE_HOSTNAME'), os.environ.get('DATABASE_USERNAME'), os.environ.get('DATABASE_PASSWORD'), os.environ.get('DATABASE_SCHEMA'))
+    db = con.cursor()
+    try:
+        db.execute('SELECT * FROM visitors WHERE id = %s LIMIT 1', (key,))
+        exists = db.fetchone()
+        if exists is not None:
+            db.execute('UPDATE visitors SET visits = visits + 1 WHERE id = %s', (key,))
+        else:
+            if not data['longitude'] or data['longitude'] == 'Not found':
+                data['longitude'] = 0.0
+            if not data['latitude'] or data['latitude'] == 'Not found':
+                data['latitude'] = 0.0
+            if not data['country_name']:
+                data['country_name'] = 'Not found'
+            if not data['state']:
+                data['state'] = 'Not found'
+            if not data['city']:
+                data['city'] = 'Not found'
+            if not data['postal']:
+                data['postal'] = 'Not found'
+            db.execute('INSERT INTO visitors(id, country, state, city, postal, longitude, latitude) '
+                       'VALUES(%s, %s, %s, %s, %s, %s, %s)', (key, data['country_name'], data['state'], 
+                       data['city'], data['postal'], data['longitude'], data['latitude']))
+        con.commit()
+    except pymysql.Error as e:
+        if hasattr(e, 'message'):
+            print(e.message)
+        else:
+            print(e)
+        con.rollback()
+
 @APP.callback(dash.dependencies.Output('main-page', 'children'),
               [dash.dependencies.Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/':
+        if os.environ.get('DATABASE_USERNAME') and os.environ.get('DATABASE_PASSWORD') and os.environ.get('DATABASE_HOSTNAME') and os.environ.get('DATABASE_SCHEMA'):
+            ip = request.remote_addr
+            now = datetime.now()
+            mins = now.minute - (now.minute % 5)        # Round to 5 mins
+            now = datetime(now.year, now.month, now.day, now.hour, mins)
+            time = now.strftime('%Y/%m/%d %I:%M%p')
+            data = requests.get('https://geolocation-db.com/json/' + ip + '&position=true').json()
+            key = ip + '-' + time
+            register_visit(key, data)
         return create_layout()
     try:
         sub = importlib.import_module('subpages.'+pathname.strip('/'))

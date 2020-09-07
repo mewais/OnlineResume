@@ -68,7 +68,7 @@ The following is yet to be done:
 This project was abandoned when I found a paper implementing the exact same idea. My code and progress can be found [here](https://github.com/mewais/AwesomeInstructionOffloading).  
   
 
-### Cache Compression and Approximation ![](https://img.shields.io/badge/-University%20of%20British%20Columbia-blueviolet) ![](https://img.shields.io/badge/status-Finished-green) [![](https://img.shields.io/badge/-Detailed%20Results-important)](/cache-compression)
+### Cache Compression and Approximation ![](https://img.shields.io/badge/-University%20of%20British%20Columbia-blueviolet) ![](https://img.shields.io/badge/status-Finished-green) [![](https://img.shields.io/badge/-Detailed%20Results-important)](/CacheCompression)
 
 This was my work during my MSc, eventually this was published in my thesis, plus two conference papers. This work was focused on building caches that support compression, or approximation, or both. During this work I did the following:
 * Analysis of data patterns, inter-block, and intra-block entropy in cache dumps of multiple benchmarks.
