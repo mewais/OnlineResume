@@ -38,8 +38,13 @@ I tried to separate the content from the code as much as possible. The structure
 - Create a new `favicon.ico` file, you can convert a normal image into an icon using [this website](https://icoconvert.com/)
 - Start modifying the content as needed
 - Start the website by running `python3 Resume.py`
+- If you need to use tracking (i.e. find out the location of users accessing your website) you will have to do a few extra things
+  - Create a MySQL instance on your server or hosting service
+  - Define the environment variables `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `DATABASE_HOSTNAME`, and `DATABASE_SCHEMA` representing your username, password, url, and database name, respectively.
+  - visit the subpage `/Visitors` on your website. For example [mohammad.ewais.ca/Visitors](http://mohammad.ewais.ca/Visitors)
 
 ## TODOs
+- Find a better API for geolocating IP addresses. The current one fails quiet a lot.
 - Try and make it responsive (i.e. works on different screen sizes and devices).
 - Add pages with detailed results for some of the projects.
 - Find and use an API to get citations of papers, display some nice visualizations for each paper in the publications page.
