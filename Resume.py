@@ -22,6 +22,7 @@ import requests
 import pymysql
 from datetime import datetime
 from flask import request
+from pytz import timezone
 
 from assets.content.links import *
 from App import APP
@@ -169,10 +170,15 @@ def display_page(pathname):
         return None
     if pathname == '/':
         if os.environ.get('DATABASE_USERNAME') and os.environ.get('DATABASE_PASSWORD') and os.environ.get('DATABASE_HOSTNAME') and os.environ.get('DATABASE_SCHEMA'):
-            ip = request.remote_addr
+            # https://stackoverflow.com/a/49760261/2328163
+            if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+                ip = request.environ['REMOTE_ADDR']
+            else:
+                ip = request.environ['HTTP_X_FORWARDED_FOR']
             now = datetime.now()
             mins = now.minute - (now.minute % 5)        # Round to 5 mins
             now = datetime(now.year, now.month, now.day, now.hour, mins)
+            now = timezone('US/Eastern').localize(now)
             time = now.strftime('%Y/%m/%d %I:%M%p')
             data = requests.get('https://geolocation-db.com/json/' + ip + '&position=true').json()
             key = ip + '-' + time
