@@ -165,6 +165,8 @@ def register_visit(key, data):
 @APP.callback(dash.dependencies.Output('main-page', 'children'),
               [dash.dependencies.Input('url', 'pathname')])
 def display_page(pathname):
+    if pathname == None:
+        return None
     if pathname == '/':
         if os.environ.get('DATABASE_USERNAME') and os.environ.get('DATABASE_PASSWORD') and os.environ.get('DATABASE_HOSTNAME') and os.environ.get('DATABASE_SCHEMA'):
             ip = request.remote_addr
@@ -178,13 +180,15 @@ def display_page(pathname):
         return create_layout()
     try:
         sub = importlib.import_module('subpages.'+pathname.strip('/'))
-    except:
+    except Exception as e:
+        print(e)
         return dhtml.Div([
             dhtml.H3('No such page')
         ])
     try:
         layout = sub.create_layout()
-    except:
+    except Exception as e:
+        print(e)
         return dhtml.Div([
             dhtml.H3('Page under construction')
         ])
