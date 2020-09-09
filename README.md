@@ -44,7 +44,6 @@ I tried to separate the content from the code as much as possible. The structure
   - visit the subpage `/Visitors` on your website. For example [mohammad.ewais.ca/Visitors](http://mohammad.ewais.ca/Visitors)
 
 ## TODOs
-- Find a better API for geolocating IP addresses. The current one fails quiet a lot.
 - Try and make it responsive (i.e. works on different screen sizes and devices).
 - Add pages with detailed results for some of the projects.
 - Find and use an API to get citations of papers, display some nice visualizations for each paper in the publications page.
