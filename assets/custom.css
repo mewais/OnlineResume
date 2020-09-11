@@ -185,27 +185,27 @@ h3, h4, h5, h6 {
 
 /* Rows Layout */
 .one-half-row {
-    height: 48vh;
+    height: 48%;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
 .one-third-row {
 	background-color: transparent;
-	height: 32vh;
+	height: 32%;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
 .two-thirds-row {
 	background-color: transparent;
-	height: 64vh;
+	height: 64%;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
 .whole-row {
-    height: 98vh;
+    height: 98%;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }

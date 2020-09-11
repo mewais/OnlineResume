@@ -200,5 +200,5 @@ def create_skills_layout():
     bar = dcore.Graph(id='bar', className='one-sixth-column whole-row', style={'float': 'right', 'align': 'right'})
 
     # Layout
-    layout = dhtml.Div(children=[sunburst, bar])
+    layout = dhtml.Div(children=[sunburst, bar], className='whole-row')
     return layout

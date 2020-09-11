@@ -194,6 +194,6 @@ def create_contact_layout():
 
     # Layout
     figures = dhtml.Div(children=[calendar, work_map], className='one-half-column', style={'float': 'right', 'align': 'right'})
-    layout = dhtml.Div(children=[info, figures])
+    layout = dhtml.Div(children=[info, figures], className='whole-column whole-row')
 
     return layout
