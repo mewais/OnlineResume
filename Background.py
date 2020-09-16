@@ -185,6 +185,6 @@ def create_background_layout():
 
     # Full page
     upper_half = dhtml.Div(children=[image, summary], className='one-half-row')
-    page = dhtml.Div(children=[upper_half, history])
+    page = dhtml.Div(children=[upper_half, history], className='whole-column whole-row')
 
     return page
