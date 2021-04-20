@@ -15,6 +15,7 @@ This is currently my main focus in my PhD. The idea is to allow FPGAs to be firs
   * A device plugin to discover and utilize FPGAs, found [here](https://github.com/mewais/FPGA-K8s-DevicePlugin)
 * Build docker containers that utilize FPGAs, this currently is focused on FPGA based VNFs.
 * Deploy FPGA containers and utilize them in a cluster.
+* This work will be open sourced upon acceptance of the publication.
 
 
 ### FPGA VNF implementations ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)

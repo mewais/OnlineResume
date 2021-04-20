@@ -1,5 +1,10 @@
 ## Publications
 
+* **FFIVE: An FPGA Framework for Interactive VNF Environments**  
+  *Juan Camilo Vega, **Mohammad Ewais**, Alberto Leon-Garcia, Paul Chow*  
+  *2021 IEEE International Symposium On Field-Programmable Custom Computing Machines (FCCM 2021)*  
+  ![](https://img.shields.io/badge/-poster-purple)
+
 * **Decoupling Approximation and Cache Compression**  
   *Amin Ghasemazar, **Mohammad Ewais**, Mieszko Lis*  
   *2020 Workshop on Approximate Computing Across the Stack (WAX 2020)*  
