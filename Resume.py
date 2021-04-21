@@ -182,7 +182,7 @@ def display_page(pathname):
             now = datetime(now.year, now.month, now.day, now.hour, mins)
             now = timezone('US/Eastern').localize(now)
             time = now.strftime('%Y/%m/%d %I:%M%p')
-            data = requests.get('https://geolocation-db.com/json/' + ip + '&position=true').json()
+            data = requests.get('http://geolocation-db.com/json/' + ip + '&position=true').json()
             key = ip + '-' + time
             register_visit(key, data)
         return create_layout()
