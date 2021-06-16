@@ -1,9 +1,16 @@
 ## Publications
 
+* **A Framework Integrating FPGAs in VNF Networks**  
+  *__Mohammad Ewais__, Juan Camilo Vega, Alberto Leon-Garcia, Paul Chow*  
+  *2021 12th International Conference on Network of the Future (NoF)*  
+  ![](https://img.shields.io/badge/-conference%20paper-green)
+  ![](https://img.shields.io/badge/-to%20appear-gray)
+
 * **FFIVE: An FPGA Framework for Interactive VNF Environments**  
   *Juan Camilo Vega, **Mohammad Ewais**, Alberto Leon-Garcia, Paul Chow*  
   *2021 IEEE International Symposium On Field-Programmable Custom Computing Machines (FCCM 2021)*  
   ![](https://img.shields.io/badge/-poster-purple)
+  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9444058&casa_token=eVSurPpShnEAAAAA:aWWWE418mMS2wnlNb2e7WwMWOGEv8q_2MQ_GlCLaD4yotdNR3IWtllzZdaJ1ADUC9z4mkCEatA)
 
 * **Decoupling Approximation and Cache Compression**  
   *Amin Ghasemazar, **Mohammad Ewais**, Mieszko Lis*  

@@ -1,26 +1,24 @@
 ## Research and Projects
 
-### HDLElaborator ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Ongoing-yellow)
+### Tamantuq ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Ongoing-yellow)
 
-A couple of years ago I tried to build a CAD tool that would be able to compile both VHDL and Verilog. We started with Lex and Yacc grammars and started using them for parsing. This quickly proved to be a very tedious task that we didn't have enough time for.
-Recently I came across the awesome [hdlConvertor library](https://github.com/Nic30/hdlConvertor) library. The library is capable of reading Verilog and VHDL files, and producing a unified AST for them. So I decided to revisit the topic and create my HDLElaborator library, taking in the AST as an input and generating a netlist as an output. This is currently under heavy development and is my current side project.
-The library will be open sourced when it starts to be at least partially functional.
+Tamantuq is my attempt at building some digital design CAD tools with my own personal spin. The purpose of which is to educate myself, test some theories and ideas I have in mind, and hopefully be able to improve the process.
+I am currently working on a Parser and Elaborator for VHDL2008, VHDL 2019, Verilog 2005, and SystemVerilog 2017. The intention is to provide **FULL** support of all four languages (unlike other tools out there that only provide partial support for only some of these). Once this is done, I will move to other steps in the digital design flow with the hopes of improving some of them.
+This work will be open sourced when it starts to be at least partially functional.
 
+### Datacenter Architecture ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
 
-### FPGA virtualization and containerization ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
+This is my current focus in my PhD, mostly rethinking datacenter architectures and the involvement of FPGAs in new era datacenters. This also touches some interesting topics like resource disaggregation and data sharing. Currently I am working on a simulator to facilitate the rest of the development and research into this. More details will be added later. 
 
-This is currently my main focus in my PhD. The idea is to allow FPGAs to be first class citizens in datacenters, essentially being able to virtualize them, deploy applications on them, share them between different users, and be able to scale up their applications. Currently we're able to do the following:
+### FPGA virtualization and containerization for VNFs ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Finished-green)
+
+This was the early part of my PhD. The idea is to allow FPGAs to be first class citizens in datacenters, essentially being able to virtualize them, deploy applications on them, share them between different users, and be able to scale up their applications. This work was more focused towards VNFs and Telecommunications and has the following capabilities:
 * Disover FPGAs connected to datacenter nodes and advertise them as available resources. This is currently two components:
   * A modification to kubernetes device plugin API, found [here](https://github.com/kubernetes/kubernetes/pull/91190)
   * A device plugin to discover and utilize FPGAs, found [here](https://github.com/mewais/FPGA-K8s-DevicePlugin)
-* Build docker containers that utilize FPGAs, this currently is focused on FPGA based VNFs.
-* Deploy FPGA containers and utilize them in a cluster.
-* This work will be open sourced upon acceptance of the publication.
-
-
-### FPGA VNF implementations ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
-
-This is part of my PhD work, which is implementing different 100G VNFs on FPGAs, this is still in its early phases (as is my PhD, currently). So far we have an implementation of a 100G Firewall and a 100G Traffic Generator. This is still ongoing with more VNFs.  
+* Build docker containers that utilize FPGAs, found [here](https://github.com/UofT-HPRC/FFIVE)
+* Deploy FPGA containers and utilize them in a cluster, found [here](https://github.com/UofT-HPRC/FFIVE)
+* There are also some VNF examples available, including simple VXLAN wires, VXLAN loopbacks, a BPF-based Firewall, and a traffic generator, all of which can be found [here](https://github.com/UofT-HPRC/FFIVE)
   
 
 ### ShellCreator ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Maintained-green)
@@ -33,7 +31,7 @@ This is part of my PhD work, which is implementing different 100G VNFs on FPGAs,
 ### Online Resume ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Finished-green)
 This website, the one you're looking at right now. I wanted something that includes everything I'd like to add in my resume, without the size restrictions. This website will be under constant improvement and addition to make it up to date.
 
-The source code can be found [here](https://github.com/mewais/Resume)
+The source code can be found [here](https://github.com/mewais/OnlineResume)
 
 
 ### ML Accelerator Virtual ISA ![](https://img.shields.io/badge/-Huawei%20Technologies-brown) ![](https://img.shields.io/badge/status-Finished-green)
