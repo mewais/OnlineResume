@@ -40,7 +40,8 @@ skills = {
             'SimpleScalar': 80,
             'zsim': 90,
             'GPGPUSim': 40,
-            'Intel Pin': 80
+            'Intel Pin': 80,
+            'DynamoRIO': 80
         }
     },
     'Machine Learning': {

@@ -2,6 +2,9 @@
 
 * **ECE532 Digital Systems Design**  
   Design for large digital systems, mapping algorithms to architectures, performance estimation, buses, FPGA architecture and tools, simulation and verification, embedded programming, clocking and synchronizers, high-speed interfaces.  
+  ![](https://img.shields.io/badge/-Course%20Instructor-red)
+  ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
+  ![](https://img.shields.io/badge/-Spring%202022-gray)  
   ![](https://img.shields.io/badge/-Lab%20TA-orange)
   ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
   ![](https://img.shields.io/badge/-Spring%202021-gray)
@@ -31,6 +34,7 @@
   ![](https://img.shields.io/badge/-University%20of%20Toronto-9cf)
   ![](https://img.shields.io/badge/-Fall%202019-gray)
   ![](https://img.shields.io/badge/-Fall%202020-gray)
+  ![](https://img.shields.io/badge/-Fall%202021-gray)
 * **CPEN311 Digital System Design**  
   Build an embedded system using FPGA SoCs, projects include a hardware component, a software component, interfacing with outside peripherals, databases, android apps, etc.  
   ![](https://img.shields.io/badge/-Lab%20TA-orange)
