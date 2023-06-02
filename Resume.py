@@ -134,7 +134,7 @@ APP.layout = dhtml.Div([
 ])
 
 def register_visit(key, data):
-    con = pymysql.connect(os.environ.get('DATABASE_HOSTNAME'), os.environ.get('DATABASE_USERNAME'), os.environ.get('DATABASE_PASSWORD'), os.environ.get('DATABASE_SCHEMA'))
+    con = pymysql.connect(host=os.environ.get('DATABASE_HOSTNAME'), user=os.environ.get('DATABASE_USERNAME'), password=os.environ.get('DATABASE_PASSWORD'), db=os.environ.get('DATABASE_SCHEMA'))
     db = con.cursor()
     try:
         db.execute('SELECT * FROM visitors WHERE id = %s LIMIT 1', (key,))

@@ -30,7 +30,7 @@ def get_visitors():
     Returns:
         data: the list of data from database
     '''
-    con = pymysql.connect(os.environ.get('DATABASE_HOSTNAME'), os.environ.get('DATABASE_USERNAME'), os.environ.get('DATABASE_PASSWORD'), os.environ.get('DATABASE_SCHEMA'))
+    con = pymysql.connect(host=os.environ.get('DATABASE_HOSTNAME'), user=os.environ.get('DATABASE_USERNAME'), password=os.environ.get('DATABASE_PASSWORD'), db=os.environ.get('DATABASE_SCHEMA'))
     db = con.cursor()
     try:
         db.execute('SELECT * FROM visitors')
@@ -57,9 +57,10 @@ def preprocess_visitors(data):
     new_data = []
     for datum in data:
         date_time = datum[0].split('-')[1]
+        country = datum[1]
         if datum[1] == 'Israel':
-            datum[1] = 'Palestine'
-        new_data.append((date_time, datum[1], datum[2], datum[3], datum[4], datum[5], datum[6], datum[7]))
+            country = 'Palestine'
+        new_data.append((date_time, country, datum[2], datum[3], datum[4], datum[5], datum[6], datum[7]))
     return new_data
 
 def draw_figure(data):
