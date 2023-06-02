@@ -15,9 +15,9 @@
 
 import dash
 import os
-import dash_table
-import dash_html_components as dhtml
-import dash_core_components as dcore
+from dash import dash_table
+from dash import dcc as dcore
+from dash import html as dhtml
 import plotly.graph_objs as go
 import pymysql
 import pandas
@@ -57,6 +57,8 @@ def preprocess_visitors(data):
     new_data = []
     for datum in data:
         date_time = datum[0].split('-')[1]
+        if datum[1] == 'Israel':
+            datum[1] = 'Palestine'
         new_data.append((date_time, datum[1], datum[2], datum[3], datum[4], datum[5], datum[6], datum[7]))
     return new_data
 

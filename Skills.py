@@ -132,15 +132,15 @@ def draw_skill_level(hoverData):
 
     # color
     if value <= 20:
-        color = '#BD3B1B'
+        color = '#FF4E11'
     elif value <= 40:
-        color = '#D8A800'
+        color = '#FF8E15'
     elif value <= 60:
-        color = '#B9D870'
+        color = '#FAB733'
     elif value <= 80:
-        color = '#B6C61A'
+        color = '#ACB334'
     elif value <= 100:
-        color = '#006344'
+        color = '#69B34C'
 
     # data
     data = [go.Bar(
