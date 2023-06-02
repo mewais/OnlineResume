@@ -14,8 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import dash
-import dash_core_components as dcore
-import dash_html_components as dhtml
+from dash import dcc as dcore
+from dash import html as dhtml
 import plotly.graph_objs as go
 
 import datetime

@@ -15,8 +15,8 @@
 
 import os
 import dash
-import dash_core_components as dcore
-import dash_html_components as dhtml
+from dash import dcc as dcore
+from dash import html as dhtml
 import importlib
 import requests
 import pymysql

@@ -14,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import dash
-import dash_core_components as dcore
+from dash import dcc as dcore
 
 def create_publications_layout():
     '''
