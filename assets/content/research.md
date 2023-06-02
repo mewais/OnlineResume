@@ -1,14 +1,14 @@
 ## Research and Projects
 
+### Datacenter Architecture ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
+
+This is my current focus in my PhD, mostly focusing on resource (especially memory) disaggregation in the datacenter. Currently, I am working on a simulator to facilitate the rest of the development and research into this. More details will be added later. 
+
 ### Tamantuq ![](https://img.shields.io/badge/-Personal-informational) ![](https://img.shields.io/badge/status-Ongoing-yellow)
 
 Tamantuq is my attempt at building some digital design CAD tools with my own personal spin. The purpose of which is to educate myself, test some theories and ideas I have in mind, and hopefully be able to improve the process.
-I am currently working on a Parser and Elaborator for VHDL2008, VHDL 2019, Verilog 2005, and SystemVerilog 2017. The intention is to provide **FULL** support of all four languages (unlike other tools out there that only provide partial support for only some of these). Once this is done, I will move to other steps in the digital design flow with the hopes of improving some of them.
-This work will be open sourced when it starts to be at least partially functional.
-
-### Datacenter Architecture ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Ongoing-yellow)
-
-This is my current focus in my PhD, mostly rethinking datacenter architectures and the involvement of FPGAs in new era datacenters. This also touches some interesting topics like resource disaggregation and data sharing. Currently I am working on a simulator to facilitate the rest of the development and research into this. More details will be added later. 
+I am currently working on a Parser and Elaborator for VHDL 2008, VHDL 2019, Verilog 2005, and SystemVerilog 2017. The intention is to provide **FULL** support of all four languages (unlike other tools out there that only provide partial support for only some of these). Once this is done, I will move to other steps in the digital design flow with the hopes of improving some of them.
+Currently, the parser fully supporst VHDL 2008 and VHDL 2019, and partially supports both Verilog 2005 and SystemVerilog 2017. The elaborator is not yet started. This work will be open sourced when it starts to be at least partially functional.
 
 ### FPGA virtualization and containerization for VNFs ![](https://img.shields.io/badge/-University%20of%20Toronto-yellowgreen) ![](https://img.shields.io/badge/status-Finished-green)
 

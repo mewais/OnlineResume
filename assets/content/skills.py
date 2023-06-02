@@ -12,7 +12,7 @@ skills = {
             'Python': 80,
             'Java': 70,
             'Go': 60,
-            'CUDA': 60
+            'CUDA': 40
         },
     },
     'Digital Design': {
@@ -27,21 +27,21 @@ skills = {
         'HDLs': {
             'VHDL': 90,
             'Verilog': 80,
-            'HLS': 60
+            'HLS': 50
         }
     },
     'Computer Arch': {
         'CPU': 90,
         'GPU': 70,
-        'ML Accelerators': 50,
-        'Memory Hierarchy': 80,
+        'ML Accelerators': 60,
+        'Memory Hierarchy': 90,
         'Simulators': {
             'Gem5': 70,
             'SimpleScalar': 80,
             'zsim': 90,
             'GPGPUSim': 40,
             'Intel Pin': 80,
-            'DynamoRIO': 80
+            'DynamoRIO': 90
         }
     },
     'Machine Learning': {
@@ -69,7 +69,7 @@ skills = {
         'OpenStack': 40
     },
     'Misc': {
-        'Linux Kernel/Drivers': 70,
+        'Linux Kernel/Drivers': 60,
         'Compilers': 70,
         'QT5/GTK': 70,
         'Android': 80,

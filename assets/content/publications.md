@@ -1,16 +1,28 @@
 ## Publications
 
+* **Disaggregated Memory in the Datacenter: A Survey**  
+  *__Mohammad Ewais__, Paul Chow*  
+  *IEEE Access 11 (2023)*  
+  ![](https://img.shields.io/badge/-journal%20paper-red)
+  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10056149)
+
+* **The Future of FPGA Acceleration in Datacenters and the Cloud**  
+  *Bobda, Christophe, Joel Mandebi Mbongue, Paul Chow, **Mohammad Ewais**, Naif Tarafdar, Juan Camilo Vega, Ken Eguro et al.*  
+  *ACM Transactions on Reconfigurable Technology and Systems (TRETS) 15.3 (2022)*  
+  ![](https://img.shields.io/badge/-journal%20paper-red)
+  [![](https://img.shields.io/badge/-link-blue)](https://dl.acm.org/doi/pdf/10.1145/3506713)
+
 * **A Framework Integrating FPGAs in VNF Networks**  
   *__Mohammad Ewais__, Juan Camilo Vega, Alberto Leon-Garcia, Paul Chow*  
   *2021 12th International Conference on Network of the Future (NoF)*  
   ![](https://img.shields.io/badge/-conference%20paper-green)
-  ![](https://img.shields.io/badge/-to%20appear-gray)
+  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/document/9609941)
 
 * **FFIVE: An FPGA Framework for Interactive VNF Environments**  
   *Juan Camilo Vega, **Mohammad Ewais**, Alberto Leon-Garcia, Paul Chow*  
   *2021 IEEE International Symposium On Field-Programmable Custom Computing Machines (FCCM 2021)*  
   ![](https://img.shields.io/badge/-poster-purple)
-  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9444058&casa_token=eVSurPpShnEAAAAA:aWWWE418mMS2wnlNb2e7WwMWOGEv8q_2MQ_GlCLaD4yotdNR3IWtllzZdaJ1ADUC9z4mkCEatA)
+  [![](https://img.shields.io/badge/-link-blue)](https://ieeexplore.ieee.org/document/9444058)
 
 * **Decoupling Approximation and Cache Compression**  
   *Amin Ghasemazar, **Mohammad Ewais**, Mieszko Lis*  
