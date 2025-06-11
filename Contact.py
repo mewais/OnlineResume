@@ -21,7 +21,7 @@ import plotly.colors as co
 import icalendar
 import recurring_ical_events
 import urllib.request
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 from assets.content.location import *
 from assets.content.calendar import *
@@ -44,7 +44,7 @@ def draw_calendar():
         start_date = start_date - timedelta(days=2)
         end_date = end_date - timedelta(days=2)
     start = (start_date.year, start_date.month, start_date.day)
-    end =   (end_date.year, end_date.month, end_date.day)
+    end = (end_date.year, end_date.month, end_date.day)
     # Download the events
     ical_string = urllib.request.urlopen(calendar_link).read()
     calendar = icalendar.Calendar.from_ical(ical_string)
@@ -78,10 +78,21 @@ def draw_calendar():
         start_time = event["DTSTART"].dt
         end_time = event["DTEND"].dt
         name = event["SUMMARY"]
-        day_index = (start_time.date() - start_date).days
-        hour_start = (start_time.hour - 8) * 2 + (start_time.minute // 30)
-        hour_end = (end_time.hour - 8) * 2 + (end_time.minute // 30)
-        text = '<b>' + name + '</b><br>' + start_time.strftime('%a %b %d') + '<br><i>' + start_time.strftime('%I:%M%p') + ' to ' + end_time.strftime('%I:%M%p') + '</i>'
+        if isinstance(start_time, datetime):
+            day_index = (start_time.date() - start_date).days
+            hour_start = (start_time.hour - 8) * 2 + (start_time.minute // 30)
+            hour_end = (end_time.hour - 8) * 2 + (end_time.minute // 30)
+            text = '<b>' + name + '</b><br>' + start_time.strftime('%a %b %d') + '<br><i>' + start_time.strftime(
+                '%I:%M%p') + ' to ' + end_time.strftime('%I:%M%p') + '</i>'
+        elif isinstance(start_time, date):
+            # All day events typically show up so
+            day_index = (start_time - start_date).days
+            hour_start = 3
+            hour_end = 23
+            text = '<b>' + name + '</b><br>' + start_time.strftime('%a %b %d') + '<br><i> 9:30AM to 7:30PM</i>'
+        else:
+            # ????
+            continue
         if name not in values:
             values[name] = ([day_index], [hour_start], [hour_end - hour_start], [text])
         else:
