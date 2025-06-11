@@ -17,7 +17,7 @@ import dash
 from dash import dcc as dcore
 from dash import html as dhtml
 
-def create_research_layout():
+def create_work_layout():
     '''
     Create the layout of the teaching tab. This is just a simple
     markdown file.
@@ -28,7 +28,7 @@ def create_research_layout():
         layout: The HTML body of the teaching tab
     '''
     # TODO: Utilize the "Detailed Results" tags in the research markdown
-    with open('assets/content/research.md', 'r') as file:
+    with open('assets/content/work.md', 'r') as file:
         research_md = file.read()
     research = dcore.Markdown(research_md)
     layout = dhtml.Div(children=[research], className='whole-column whole-row markdown', style={'overflowY': 'scroll'})

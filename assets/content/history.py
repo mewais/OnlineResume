@@ -32,6 +32,11 @@ experience = [{
     'location': 'Huawei Technologies',
     'start': datetime.datetime(2018, 5, 1),
     'end': datetime.datetime(2019, 8, 1)
+}, {
+    'name': 'ML/HPC Architect',
+    'location': 'Advanced Micro Devices',
+    'start': datetime.datetime(2023, 11, 15),
+    'end': datetime.datetime.today()        # Current
 }]
 
 events = [{

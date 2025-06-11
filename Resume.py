@@ -27,7 +27,7 @@ from pytz import timezone
 from assets.content.links import *
 from App import APP
 from Background import create_background_layout
-from Research import create_research_layout
+from Work import create_work_layout
 from Publications import create_publications_layout
 from Teaching import create_teaching_layout
 from Skills import create_skills_layout
@@ -35,7 +35,7 @@ from Contact import create_contact_layout
 
 # These layouts do not need to be updated everytime, they're static
 BACKGROUND = create_background_layout()
-RESEARCH = create_research_layout()
+WORK = create_work_layout()
 PUBLICATIONS = create_publications_layout()
 TEACHING = create_teaching_layout()
 SKILLS = create_skills_layout()
@@ -63,7 +63,7 @@ def create_layout():
     # Tabs
     # FIXME: How to make those spaces show in the website?
     background_tab = dcore.Tab(label='\uf015    Background', value='1', className='unselected-tab', selected_className='selected-tab')
-    research_tab = dcore.Tab(label='\uf5d2    Research and Projects', value='2', className='unselected-tab', selected_className='selected-tab')
+    work_tab = dcore.Tab(label='\uf5d2    Work and Research', value='2', className='unselected-tab', selected_className='selected-tab')
     publications_tab = dcore.Tab(label='\uf70e    Publications', value='3', className='unselected-tab', selected_className='selected-tab')
     teaching_tab = dcore.Tab(label='\uf51c    Teaching', value='4', className='unselected-tab', selected_className='selected-tab')
     skills_tab = dcore.Tab(label='\uf7d9    Skills and Interests', value='5', className='unselected-tab', selected_className='selected-tab')
@@ -88,7 +88,7 @@ def create_layout():
     footer_container = dhtml.Div(children=[footer], className='tab-footer-container')
 
     # Tab Division
-    tabs_collection = dcore.Tabs(id='tabs', children=[background_tab, research_tab, publications_tab, teaching_tab, skills_tab, contact_tab], value='1', vertical=True, parent_className='tabs', className='tabs-container')
+    tabs_collection = dcore.Tabs(id='tabs', children=[background_tab, work_tab, publications_tab, teaching_tab, skills_tab, contact_tab], value='1', vertical=True, parent_className='tabs', className='tabs-container')
  
     tab_div = dhtml.Div(id='tabs-div', children=[image, title, tabs_collection, footer_container], className='tab-div')
 
@@ -116,7 +116,7 @@ def tab_picker(value):
     if value == '1':
         layout = BACKGROUND
     elif value == '2':
-        layout = RESEARCH
+        layout = WORK
     elif value == '3':
         layout = PUBLICATIONS
     elif value == '4':
