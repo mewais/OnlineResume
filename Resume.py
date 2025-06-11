@@ -203,4 +203,4 @@ def display_page(pathname):
     return layout
 
 if __name__ == '__main__':
-    APP.run_server(debug=True)
+    APP.run(debug=True)

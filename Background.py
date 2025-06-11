@@ -66,7 +66,7 @@ def draw_history_figure():
     current = earliest
     while True:
         x_labels.append(current.strftime('%Y %b'))
-        current = current + monthdelta.monthdelta(1)
+        current = current + monthdelta.MonthDelta(1)
         if current > datetime.datetime.today():
             break
 
