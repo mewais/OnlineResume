@@ -94,13 +94,91 @@ Create new components in `src/components/` and add them to `src/app/page.tsx`.
 
 ## Deployment
 
-Deploy easily on Vercel:
+### Deploy on Heroku
+
+This application is configured for easy deployment on Heroku:
+
+#### Prerequisites
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
+- Git repository initialized
+- Heroku account
+
+#### Quick Deploy
+
+1. **Create a new Heroku app:**
+   ```bash
+   heroku create your-resume-app-name
+   ```
+
+2. **Deploy from your current branch:**
+   ```bash
+   git add .
+   git commit -m "Deploy modern resume to Heroku"
+   git push heroku ClaudeAI:main
+   ```
+
+3. **Open your deployed app:**
+   ```bash
+   heroku open
+   ```
+
+#### Manual Setup
+
+1. **Login to Heroku:**
+   ```bash
+   heroku login
+   ```
+
+2. **Create Heroku app:**
+   ```bash
+   heroku create your-resume-app-name
+   ```
+
+3. **Set Node.js version (optional):**
+   ```bash
+   heroku config:set NPM_CONFIG_PRODUCTION=false
+   heroku config:set NODE_ENV=production
+   ```
+
+4. **Deploy:**
+   ```bash
+   git push heroku ClaudeAI:main
+   ```
+
+#### Deploy Button
+
+You can also deploy directly to Heroku using this button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+#### Configuration Files
+
+The following files are configured for Heroku deployment:
+
+- **`Procfile`**: Specifies the command to start the application
+- **`app.json`**: Heroku app configuration and metadata
+- **`package.json`**: Includes `heroku-postbuild` script and Node.js version
+- **`next.config.ts`**: Optimized for production deployment
+
+#### Environment Variables
+
+No environment variables are required for basic deployment. The app will work out of the box.
+
+#### Troubleshooting
+
+- **Build fails**: Check Node.js version compatibility (requires Node 18+)
+- **App crashes**: Check logs with `heroku logs --tail`
+- **Static files not loading**: Ensure `next.config.ts` has correct configuration
+
+### Alternative Deployment Options
+
+#### Deploy on Vercel (Recommended for Next.js)
 
 ```bash
 vercel deploy
 ```
 
-Or build for production:
+#### Build for Production Locally
 
 ```bash
 npm run build

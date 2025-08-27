@@ -1,0 +1,19 @@
+{
+  "name": "modern-resume",
+  "description": "A beautiful, responsive personal resume website built with Next.js",
+  "repository": "https://github.com/mewais/OnlineResume",
+  "keywords": ["nextjs", "resume", "portfolio", "typescript", "tailwindcss"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "value": "false"
+    }
+  }
+}
