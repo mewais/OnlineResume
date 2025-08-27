@@ -1,49 +1,117 @@
-# Interactive Resume
-I always wanted to have a personal website, serving as a portfolio or a resume of sorts. I tried a couple of wordpress themes, which I didn't feel comfortable with, so I decided I should build my own website. But knowing nothing about web development, and not having enough time to waste learning css, js, and whatever else web developers use, I decided to use [Plotly](https://plotly.com/python/) and [Dash](https://dash.plotly.com/) for the job. This is no normal resume. Because it is built using Plotly and Dash, I am taking advantage of this to build a resume that is informative, interactive, and has a lot of visualizations.
+# Modern Resume Website
 
-## Visit me
-[mohammad.ewais.ca](http://mohammad.ewais.ca)
+A beautiful, responsive personal resume website built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, mobile-first design, and clean code/content separation.
 
-## Limitations
-This was not built to be responsive, it will probably be broken if viewed on phones for example.
+## Features
 
-## Structure
-I tried to separate the content from the code as much as possible. The structure is as follows:
-- The main page itself is in the file `Resume.py`.
-- Every tab in the main page is in a file with the same name in the top level, for example `Background.py`.
-- CSS classes are in the file `assets/custom.css` (Be warned, it may be the worst CSS you'll ever read)
-- Website icon (the one shown in the browser tab) is in `assets/favicon.ico`
-- icons used in the website are in `assets/icons/`
-- user images (Well, me!) can be found in the folder `assets/images/`
-- use info and main page content can be found in the folder `assets/content/`
-  - Some of this content is written down in [Markdown format](https://www.markdownguide.org/basic-syntax/) and will be rendered directly in the website
-  - Some of this content is written down in python (got no time to parse stuff myself), although I tried to make it very simple to modify.
-  - The contents of this directory are detailed here:
-    - `name.md` is a one line file including just your name, used for the title.
-    - `links.py` includes a list of links that are used in the tab footer.
-    - `summary.md` includes a summary about yourself, will be displayed in the background page.
-    - `history.py` includes your work and education history, plus some notable events if you choose to. These are also displayed as a figure in the background page.
-    - `research.md` includes all your projects and research, with some nice coloring, decorations, and images, all in bulk in markdown format. This is the entirety of the research page.
-    - `publications.md` includes all your publications, with some nice coloring and decorations, in markdown format. This is the entirety of the publications page.
-    - `teaching.md` includes all your teaching courses, with some nice coloring, decorations, all in bulk in markdown format. This is the entirety of the teaching page.
-    - `skills.py` includes all your skills, categorized and subcategorized with no restrictions on how many levels deep you want to go.
-    - `contact.md` includes your contact information, this will be rendered directly in the contact me page of the website.
-    - `calendar.py` includes a single link to a shareable calendar, plus a simple variable choosing whether Saturday or Monday is the first day of the week.
-    - `location.py` includes the location of your work in a simple format, used to create the map in the contact me page.
+- 🎨 Modern, beautiful design with gradient backgrounds and animations
+- 📱 Fully responsive - works perfectly on all device sizes
+- ⚡ Fast performance with Next.js 15 and Turbopack
+- 🎭 Smooth animations with Framer Motion
+- 🎯 TypeScript for type safety
+- 🎨 Tailwind CSS for styling
+- 📊 Interactive skills visualization
+- 📚 Publications timeline with categorization
+- 🎓 Education timeline
+- 💼 Professional experience showcase
+- 📧 Contact form and social links
 
-## How to use
-- If you don't already have it, install and setup `python3` and `pip`.
-- Install the dependencies
-  - `sudo pip3 install -r requirements.txt`
-- Create a new `favicon.ico` file, you can convert a normal image into an icon using [this website](https://icoconvert.com/)
-- Start modifying the content as needed
-- Start the website by running `python3 Resume.py`
-- If you need to use tracking (i.e. find out the location of users accessing your website) you will have to do a few extra things
-  - Create a MySQL instance on your server or hosting service
-  - Define the environment variables `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `DATABASE_HOSTNAME`, and `DATABASE_SCHEMA` representing your username, password, url, and database name, respectively.
-  - visit the subpage `/Visitors` on your website. For example [mohammad.ewais.ca/Visitors](http://mohammad.ewais.ca/Visitors)
+## Architecture
 
-## TODOs
-- Try and make it responsive (i.e. works on different screen sizes and devices).
-- Add pages with detailed results for some of the projects.
-- Find and use an API to get citations of papers, display some nice visualizations for each paper in the publications page.
+The project maintains clear separation between content and code:
+
+- **Content Data**: All personal information is stored in JSON files in `/src/data/`
+- **Components**: Reusable UI components in `/src/components/`
+- **Styling**: Tailwind CSS with custom gradients and animations
+- **Type Safety**: Full TypeScript coverage
+
+## Content Structure
+
+```
+src/data/
+├── personal.json     # Basic info, contact details, social links
+├── experience.json   # Work experience and roles
+├── education.json    # Academic background
+├── skills.json       # Technical skills organized by category
+└── publications.json # Research publications and papers
+```
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Run the development server:
+```bash
+npm run dev
+```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Customization
+
+### Update Personal Information
+
+Edit the JSON files in `src/data/` to reflect your information:
+
+- `personal.json`: Name, title, summary, email, social links
+- `experience.json`: Work history, roles, descriptions, technologies
+- `education.json`: Degrees, institutions, dates, descriptions
+- `skills.json`: Technical skills organized by categories and subcategories
+- `publications.json`: Research papers, conference presentations, etc.
+
+### Modify Styling
+
+The design uses Tailwind CSS with custom color schemes. Key design elements:
+
+- **Colors**: Purple and blue gradients throughout
+- **Typography**: Geist font family
+- **Animations**: Framer Motion for smooth transitions
+- **Responsive**: Mobile-first approach
+
+### Add New Sections
+
+Create new components in `src/components/` and add them to `src/app/page.tsx`.
+
+## Technologies Used
+
+- **Next.js 15**: React framework with App Router
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first CSS framework
+- **Framer Motion**: Animation library
+- **Heroicons**: Icon library
+- **Lucide React**: Additional icons
+
+## Performance
+
+- ✅ Mobile-first responsive design
+- ✅ Smooth 60fps animations
+- ✅ Optimized images and fonts
+- ✅ Fast loading with Next.js optimization
+- ✅ SEO-friendly with proper metadata
+
+## Deployment
+
+Deploy easily on Vercel:
+
+```bash
+vercel deploy
+```
+
+Or build for production:
+
+```bash
+npm run build
+npm start
+```
+
+## Comparison with Original
+
+The original Python/Dash version has been completely rebuilt with modern web technologies:
+
+- **Old**: Python + Dash + Plotly (not responsive, limited styling)
+- **New**: Next.js + TypeScript + Tailwind (fully responsive, modern animations)
+- **Maintained**: Content/code separation principle
+- **Improved**: Mobile experience, performance, maintainability

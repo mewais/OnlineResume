@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Disaggregated Memory in the Datacenter: A Survey",
+    "authors": ["Mohammad Ewais", "Paul Chow"],
+    "venue": "IEEE Access 11 (2023)",
+    "type": "journal",
+    "year": 2023,
+    "link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10056149",
+    "color": "#dc2626"
+  },
+  {
+    "title": "The Future of FPGA Acceleration in Datacenters and the Cloud",
+    "authors": ["Bobda, Christophe", "Joel Mandebi Mbongue", "Paul Chow", "Mohammad Ewais", "Naif Tarafdar", "Juan Camilo Vega", "Ken Eguro"],
+    "venue": "ACM Transactions on Reconfigurable Technology and Systems (TRETS) 15.3 (2022)",
+    "type": "journal",
+    "year": 2022,
+    "link": "https://dl.acm.org/doi/pdf/10.1145/3506713",
+    "color": "#dc2626"
+  },
+  {
+    "title": "A Framework Integrating FPGAs in VNF Networks",
+    "authors": ["Mohammad Ewais", "Juan Camilo Vega", "Alberto Leon-Garcia", "Paul Chow"],
+    "venue": "2021 12th International Conference on Network of the Future (NoF)",
+    "type": "conference",
+    "year": 2021,
+    "link": "https://ieeexplore.ieee.org/document/9609941",
+    "color": "#16a34a"
+  },
+  {
+    "title": "FFIVE: An FPGA Framework for Interactive VNF Environments",
+    "authors": ["Juan Camilo Vega", "Mohammad Ewais", "Alberto Leon-Garcia", "Paul Chow"],
+    "venue": "2021 IEEE International Symposium On Field-Programmable Custom Computing Machines (FCCM 2021)",
+    "type": "poster",
+    "year": 2021,
+    "link": "https://ieeexplore.ieee.org/document/9444058",
+    "color": "#7c3aed"
+  },
+  {
+    "title": "Decoupling Approximation and Cache Compression",
+    "authors": ["Amin Ghasemazar", "Mohammad Ewais", "Mieszko Lis"],
+    "venue": "2020 Workshop on Approximate Computing Across the Stack (WAX 2020)",
+    "type": "workshop",
+    "year": 2020,
+    "link": "http://approximate.computer/wax2020/papers/ghasemazar-wax2020.pdf",
+    "color": "#ea580c"
+  },
+  {
+    "title": "2DCC: Cache Compression in Two Dimensions",
+    "authors": ["Amin Ghasemazar", "Mohammad Ewais", "Prashant Nair", "Mieszko Lis"],
+    "venue": "2020 Design, Automation and Test in Europe Conference and Exhibition (DATE 2020)",
+    "type": "conference",
+    "year": 2020,
+    "link": "https://ieeexplore.ieee.org/document/9116279",
+    "color": "#16a34a"
+  },
+  {
+    "title": "Combining inter and intra-line cache compression",
+    "authors": ["Mohammad Ewais"],
+    "venue": "University of British Columbia",
+    "type": "thesis",
+    "year": 2018,
+    "link": "https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0368685",
+    "slides": "https://docs.google.com/presentation/d/1jY9Ah2LdMwFgxXsK0ifHKYqsGiD-pFZwqZ5YuHmZD_w/edit?usp=sharing",
+    "color": "#6b7280"
+  },
+  {
+    "title": "A virtual memory architecture to enhance STT-RAM performance as main memory",
+    "authors": ["Mohammad A Ewais", "Mohamed A Omran", "Andrew Raafat", "Yousra Alkabani"],
+    "venue": "2016 IEEE Canadian Conference on Electrical and Computer Engineering (CCECE 2016)",
+    "type": "conference",
+    "year": 2016,
+    "link": "https://ieeexplore.ieee.org/document/7726657",
+    "slides": "https://drive.google.com/file/d/1cBZwLq876jNKvP06txC2O8R-FDUZvSGJ/view?usp=sharing",
+    "color": "#16a34a"
+  },
+  {
+    "title": "Smart employment of circuit redundancy to effectively counter trojans (SECRET) in third-party IP cores",
+    "authors": ["Mohammed M Farag", "Mohammad A Ewais"],
+    "venue": "2014 International Conference on ReConFigurable Computing and FPGAs (ReConFig14)",
+    "type": "conference", 
+    "year": 2014,
+    "link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7032562",
+    "color": "#16a34a"
+  }
+]

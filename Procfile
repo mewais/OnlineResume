@@ -1,1 +1,0 @@
-web: gunicorn Resume:server

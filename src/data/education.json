@@ -1,0 +1,32 @@
+[
+  {
+    "degree": "PhD in Computer Engineering",
+    "institution": "University of Toronto",
+    "location": "Toronto, Canada",
+    "startDate": "2019-09",
+    "endDate": "present",
+    "current": true,
+    "description": "Focus on disaggregated memory architecture for datacenter applications",
+    "color": "#004c9b"
+  },
+  {
+    "degree": "MASc in Computer Engineering",
+    "institution": "University of British Columbia", 
+    "location": "Vancouver, Canada",
+    "startDate": "2016-09",
+    "endDate": "2018-05",
+    "current": false,
+    "description": "Specialized in cache compression and computer architecture",
+    "color": "#002c5f"
+  },
+  {
+    "degree": "BSc in Communications and Electronics",
+    "institution": "Alexandria University",
+    "location": "Alexandria, Egypt", 
+    "startDate": "2009-09",
+    "endDate": "2014-05",
+    "current": false,
+    "description": "Foundation in electrical engineering and digital systems",
+    "color": "#8b0000"
+  }
+]

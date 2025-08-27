@@ -1,0 +1,46 @@
+[
+  {
+    "title": "ML/HPC Architect",
+    "company": "Advanced Micro Devices",
+    "location": "Toronto, Canada",
+    "startDate": "2023-11",
+    "endDate": "present",
+    "current": true,
+    "description": "Design and architect datacenter GPUs for machine learning applications. Perform workload analysis, theoretical analysis, and ROI calculations for new architecture features.",
+    "technologies": ["GPU Architecture", "ML Workloads", "Performance Analysis", "HPC"],
+    "color": "#ed1c24"
+  },
+  {
+    "title": "Compilers Engineer",
+    "company": "Huawei Technologies",
+    "location": "Toronto, Canada",
+    "startDate": "2018-05",
+    "endDate": "2019-08",
+    "current": false,
+    "description": "Worked on LLVM-based compiler for in-house GPU. Responsible for TableGen pattern matching, optimization passes, and C model debugging.",
+    "technologies": ["LLVM", "GPU Compilers", "TableGen", "Optimization"],
+    "color": "#ff0000"
+  },
+  {
+    "title": "Teaching Assistant",
+    "company": "German University in Cairo",
+    "location": "Cairo, Egypt",
+    "startDate": "2015-09",
+    "endDate": "2016-01",
+    "current": false,
+    "description": "Taught digital systems design and microprocessors courses.",
+    "technologies": ["VHDL", "Digital Design", "Microprocessors"],
+    "color": "#000000"
+  },
+  {
+    "title": "Research and Teaching Assistant", 
+    "company": "American University in Cairo",
+    "location": "Cairo, Egypt",
+    "startDate": "2015-01",
+    "endDate": "2016-08",
+    "current": false,
+    "description": "Research on STT-RAM as main memory and taught various computer engineering courses.",
+    "technologies": ["Linux Kernel", "Memory Systems", "Computer Architecture"],
+    "color": "#8b0000"
+  }
+]
