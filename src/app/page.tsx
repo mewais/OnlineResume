@@ -5,10 +5,12 @@ import Education from '@/components/Education';
 import Skills from '@/components/Skills';
 import Publications from '@/components/Publications';
 import Contact from '@/components/Contact';
+import VisitorTracker from '@/components/VisitorTracker';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <VisitorTracker />
       <Navigation />
       <div id="home">
         <Hero />

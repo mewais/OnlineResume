@@ -15,6 +15,7 @@ A beautiful, responsive personal resume website built with Next.js, TypeScript, 
 - 🎓 Education timeline
 - 💼 Professional experience showcase
 - 📧 Contact form and social links
+- 🌍 **Visitor tracking and analytics** (optional)
 
 ## Architecture
 
@@ -50,6 +51,66 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## Visitor Tracking (Optional)
+
+The website includes comprehensive visitor analytics functionality that tracks visitor locations and provides beautiful analytics dashboards.
+
+### Setup Database
+
+1. **Create MySQL Database:**
+   ```sql
+   CREATE DATABASE your_resume_db;
+   USE your_resume_db;
+   
+   -- Run the SQL from visitors.sql file
+   CREATE TABLE visitors (
+       id        char(40)           not null,
+       country   char(200)          not null,
+       state     char(200)          not null,
+       city      char(200)          not null,
+       postal    char(20)           not null,
+       longitude decimal(11, 8)     not null,
+       latitude  decimal(10, 8)     not null,
+       visits    smallint default 1 not null,
+       constraint visitors_id_uindex unique (id)
+   );
+   ALTER TABLE visitors ADD PRIMARY KEY (id);
+   ```
+
+2. **Set Environment Variables:**
+   ```bash
+   # Local development (.env.local)
+   DATABASE_HOSTNAME=your-mysql-host
+   DATABASE_USERNAME=your-mysql-username
+   DATABASE_PASSWORD=your-mysql-password
+   DATABASE_SCHEMA=your-database-name
+   
+   # Production (Heroku)
+   heroku config:set DATABASE_HOSTNAME=your-mysql-host
+   heroku config:set DATABASE_USERNAME=your-mysql-username
+   heroku config:set DATABASE_PASSWORD=your-mysql-password
+   heroku config:set DATABASE_SCHEMA=your-database-name
+   ```
+
+### Features
+
+- **Automatic Tracking**: Visitors are automatically tracked on page load
+- **Geolocation**: IP-based location detection with country/state/city data
+- **Analytics Dashboard**: Beautiful dashboard accessible at `/visitors`
+- **Interactive Map**: World map showing visitor locations with custom markers
+- **Visit Statistics**: Charts showing daily visits and trends
+- **Responsive Design**: Works perfectly on all devices
+
+### Access Analytics
+
+Visit `/visitors` directly to view the analytics dashboard with:
+- Real-time visitor statistics
+- Interactive world map with visitor locations  
+- Daily visit trends and charts
+- Detailed visitor information table
+
+**Note**: If database environment variables are not configured, the website will work normally without visitor tracking.
+
 ## Customization
 
 ### Update Personal Information
@@ -83,6 +144,9 @@ Create new components in `src/components/` and add them to `src/app/page.tsx`.
 - **Framer Motion**: Animation library
 - **Heroicons**: Icon library
 - **Lucide React**: Additional icons
+- **Chart.js**: Beautiful charts and visualizations
+- **React Leaflet**: Interactive maps for visitor tracking
+- **MySQL2**: Database connectivity for visitor analytics
 
 ## Performance
 
@@ -162,7 +226,15 @@ The following files are configured for Heroku deployment:
 
 #### Environment Variables
 
-No environment variables are required for basic deployment. The app will work out of the box.
+**Basic Deployment**: No environment variables are required. The app will work without visitor tracking.
+
+**With Visitor Tracking** (Optional): Set these variables to enable analytics:
+```bash
+heroku config:set DATABASE_HOSTNAME=your-mysql-host
+heroku config:set DATABASE_USERNAME=your-mysql-username  
+heroku config:set DATABASE_PASSWORD=your-mysql-password
+heroku config:set DATABASE_SCHEMA=your-database-name
+```
 
 #### Troubleshooting
 
