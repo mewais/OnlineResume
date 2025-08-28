@@ -144,6 +144,23 @@ export default function Hero() {
               <Mail size={24} />
             </motion.a>
           </motion.div>
+
+          {/* Projects Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
+            className="flex justify-center mb-8"
+          >
+            <motion.a
+              href="/subpages/projects"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/20"
+            >
+              🚀 View Research & Projects
+            </motion.a>
+          </motion.div>
         </motion.div>
 
         <motion.button
