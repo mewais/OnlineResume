@@ -111,7 +111,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="flex justify-center space-x-6 mb-16"
+            className="flex justify-center flex-wrap gap-4 sm:gap-6 mb-32 px-4"
           >
             {Object.entries(personalData.social).map(([platform, url], index) => {
               const Icon = socialIcons[platform as keyof typeof socialIcons];
@@ -168,7 +168,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
           onClick={() => scrollToSection('experience')}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
