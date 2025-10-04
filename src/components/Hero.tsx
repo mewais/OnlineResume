@@ -150,7 +150,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.8 }}
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-32 sm:mb-24"
           >
             <motion.a
               href="/subpages/projects"
