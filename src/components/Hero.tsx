@@ -74,9 +74,11 @@ export default function Hero() {
           >
             <div className="w-40 h-40 mx-auto mb-6 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-600 rounded-full animate-pulse"></div>
-              <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-500 rounded-full border-4 border-white/20 relative z-10 flex items-center justify-center text-white text-4xl font-bold">
-                {personalData.name.split(' ').map(name => name[0]).join('')}
-              </div>
+              <img 
+                src="/images/avatar.jpg"
+                alt={personalData.name}
+                className="w-full h-full rounded-full border-4 border-white/20 relative z-10 object-cover"
+              />
             </div>
           </motion.div>
 
